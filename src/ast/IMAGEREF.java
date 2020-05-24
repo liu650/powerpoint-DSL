@@ -1,8 +1,8 @@
-package ast;
 
 import libs.Node;
 
-public class FORMULA extends SENTENCE {
+public class IMAGEREF extends Node{
+    String ref;
     @Override
     public void parse() {
 
@@ -10,9 +10,11 @@ public class FORMULA extends SENTENCE {
 
     @Override
     public void evaluate() {
-        // TODO
+        writer.print(ref);
     }
 }
-/*
-$\sum_{x = 0} ^{\infty} \frac{1}{x}$
- */
+
+
+
+
+

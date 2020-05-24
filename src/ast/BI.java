@@ -3,6 +3,9 @@ package ast;
 import libs.Node;
 
 public class BI extends Node {
+    // BI:: = "bi:" ("Bold" or "Italic")
+    boolean bold;
+    boolean italic;
     @Override
     public void parse() {
 
@@ -10,6 +13,6 @@ public class BI extends Node {
 
     @Override
     public void evaluate() {
-
+        // do nothing
     }
 }

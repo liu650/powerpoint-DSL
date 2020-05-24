@@ -4,15 +4,19 @@ TITLE::="Title= " CONTENT “;”
 AUTHOR::= "Author: " CONTENT
 SECTION: "Section: " TITLE (PAGE)*
 PAGE::= "NewPage: " TITLE (POINT | PARAGRAPH | IMAGE)*
-POINT::= "BulletPoint: " CONTENT
+POINT::= "BulletPoint: " (CONTENT)*
 PARAGRAPH::= “Paragraph”: CONTENT
-IMAGE ::= “Image:” URL (SETTINGS)?     // a url format of string
-CONTENT::= "Content:"( ("SETTINGS")?  (STRING) )| FORMULA
-SETTINGS:: = "Settings: " SIZE? BI? COLOR?
-SIZE::= "Size: " ("LARGE" or "Large" or "large" or "small")
-BI:: = "bi:" ("Bold" or "Italic")
+IMAGE ::= “Image:” (URL|PATH)     // a url format of string
+CONTENT::= "Content:" (SIZE | BI | COLOR)* (SENTENCE)*
+SENTENCE::= STRING | FORMULA
+SIZE::= "Size: " ("LARGE" or "Large" or "large")
+BI:: = "bi:" ("Bold" or "Italic") ("Bold" or "Italic")
 COLOR:: = "Color: " ("red" or "green" or ...)
 FORMULA::= "Formula: " STRING
+URL::= "Image Url:" STRING
+PATH::= "Image PATH: " STRING
 
 
 Note: When we say "STRING" here, we mean any string without whitespaces and that is not a keyword.
+Note: formula is a subclass of sentence.
+Note: available colors: red, green, blue ... (there might be more ...)

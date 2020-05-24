@@ -1,12 +1,8 @@
 package ast;
 
 import libs.Node;
-
-public class SETTINGS extends Node {
-    //SETTINGS:: = "Settings: " SIZE? BI? COLOR?
-    SIZE size;
-    BI bi;
-    COLOR color;
+public class SENTENCE extends Node {
+    String s;
     @Override
     public void parse() {
 
@@ -14,6 +10,9 @@ public class SETTINGS extends Node {
 
     @Override
     public void evaluate() {
-
+        writer.print(s);
     }
 }
+
+
+

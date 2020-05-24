@@ -12,7 +12,9 @@ public abstract class Node {
         writer = new PrintWriter(name, "UTF-8");
     }
     public static void closeWriter(){
+
         writer.close();
+
     }
 
     abstract public void parse();

@@ -3,6 +3,8 @@ package ast;
 import libs.Node;
 
 public class AUTHOR extends Node {
+    // AUTHOR::= "Author: " CONTENT
+    CONTENT ccontent;
     @Override
     public void parse() {
 
@@ -10,6 +12,13 @@ public class AUTHOR extends Node {
 
     @Override
     public void evaluate() {
-        writer.println();
+        String start = "\\author{";
+        String end = "}\n";
+        writer.println(start);
+        c.evaluate();
+        writer.println(end);
     }
 }
+/*
+\author{Me}
+ */

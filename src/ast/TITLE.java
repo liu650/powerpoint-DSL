@@ -3,7 +3,8 @@ package ast;
 import libs.Node;
 
 public class TITLE extends Node{
-    String title;
+    // TITLE::="Title= " CONTENT “;”
+    Content c;
     @Override
     public void parse() {
         tokenizer.getAndCheckNext("Title:");
@@ -12,6 +13,11 @@ public class TITLE extends Node{
 
     @Override
     public void evaluate() {
-        writer.println("<h1>" + title+"</h1>");
+        writer.print("\\title{");
+        c.evaluate();
+        writer.print("}\n");
     }
 }
+/*
+\title{Test}
+* */
