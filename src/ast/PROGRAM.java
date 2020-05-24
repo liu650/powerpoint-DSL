@@ -8,7 +8,7 @@ import java.util.List;
 
 public class PROGRAM extends Node {
     TITLE title;
-    List<TABLE> tables = new ArrayList<>();
+//    List<TABLE> tables = new ArrayList<>();
     String start = "<html>\n" +
             "<head>\n" +
             "<style>\n" +
@@ -26,11 +26,11 @@ public class PROGRAM extends Node {
         title.parse();
 
         // Parse Tables
-        while(tokenizer.moreTokens()){
-            TABLE t = new TABLE();
-            t.parse();
-            tables.add(t);
-        }
+//        while(tokenizer.moreTokens()){
+//            TABLE t = new TABLE();
+//            t.parse();
+//            tables.add(t);
+//        }
     }
 
     @Override
@@ -41,9 +41,9 @@ public class PROGRAM extends Node {
         title.evaluate();
 
         // Evaluate Tables
-        for (TABLE t : tables){
-            t.evaluate();
-        }
+//        for (TABLE t : tables){
+//            t.evaluate();
+//        }
 
         writer.println(end);
     }

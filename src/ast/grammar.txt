@@ -1,14 +1,18 @@
-Title: My Day
-Table:
-[Date | Time | Activity ]
-[Sept 1 | 9am | running ]
-[Sept 1 | 11am | eating ]
 
-PROGRAM ::= TITLE TABLE*
-TITLE   ::= "Title: " STRING
-TABLE   ::= "Table:" BOLDROW ROW*
-BOLDROW ::= ROW
-ROW     ::= "[" ITEM (SEP ITEM)* "]"
-ITEM   ::= STRING
+PROGRAM::= TITLE AUTHOR? (SECTION)*
+TITLE::="Title= " CONTENT “;”
+AUTHOR::= "Author: " CONTENT
+SECTION: "Section: " TITLE (PAGE)*
+PAGE::= "NewPage: " TITLE (POINT | PARAGRAPH | IMAGE)*
+POINT::= "BulletPoint: " CONTENT
+PARAGRAPH::= “Paragraph”: CONTENT
+IMAGE ::= “Image:” URL (SETTINGS)?     // a url format of string
+CONTENT::= "Content:"( ("SETTINGS")?  (STRING) )| FORMULA
+SETTINGS:: = "Settings: " SIZE? BI? COLOR?
+SIZE::= "Size: " ("LARGE" or "Large" or "large" or "small")
+BI:: = "bi:" ("Bold" or "Italic")
+COLOR:: = "Color: " ("red" or "green" or ...)
+FORMULA::= "Formula: " STRING
+
 
 Note: When we say "STRING" here, we mean any string without whitespaces and that is not a keyword.

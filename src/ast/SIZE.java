@@ -2,16 +2,14 @@ package ast;
 
 import libs.Node;
 
-public class ITEM extends Node {
-    String itemName;
-
+public class SIZE extends Node {
     @Override
     public void parse() {
-        itemName = tokenizer.getNext();
+
     }
 
     @Override
     public void evaluate() {
-        writer.print(itemName);
+
     }
 }
