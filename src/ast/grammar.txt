@@ -1,21 +1,21 @@
-
 PROGRAM::= TITLE AUTHOR? (SECTION)*
 TITLE::="Title= " CONTENT “;”
 AUTHOR::= "Author: " CONTENT
 SECTION: "Section: " TITLE (PAGE)*
-PAGE::= "NewPage: " TITLE (POINT | PARAGRAPH | IMAGE)*
+PAGE::= "NewPage: " TITLE PAGESTUFF*
+PAGESTUFF::== POINT | PARAGRAPH | IMAGE
 POINT::= "BulletPoint: " (CONTENT)*
 PARAGRAPH::= “Paragraph”: CONTENT
-IMAGE ::= “Image:” (URL|PATH)     // a url format of string
+IMAGE ::= “Image:” (IMAGEREF)*
+IMAGEREF::= URL|PATH
+URL::= "Image Url:" STRING
+PATH::= "Image PATH: " STRING
 CONTENT::= "Content:" (SIZE | BI | COLOR)* (SENTENCE)*
 SENTENCE::= STRING | FORMULA
 SIZE::= "Size: " ("LARGE" or "Large" or "large")
 BI:: = "bi:" ("Bold" or "Italic") ("Bold" or "Italic")
 COLOR:: = "Color: " ("red" or "green" or ...)
 FORMULA::= "Formula: " STRING
-URL::= "Image Url:" STRING
-PATH::= "Image PATH: " STRING
-
 
 Note: When we say "STRING" here, we mean any string without whitespaces and that is not a keyword.
 Note: formula is a subclass of sentence.
