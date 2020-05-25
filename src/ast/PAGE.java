@@ -1,19 +1,32 @@
 package ast;
 
 import libs.Node;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PAGE extends Node {
-    PAGETITLE title;
+    //PAGE::= "NewPage: " PAGETITLE PAGESTUFF*
+    PAGETITLE pagetitle;
     List<PAGESTUFF> pstf = new ArrayList<>();
 
     @Override
     public void parse() {
+        tokenizer.getAndCheckNext("NewPage:");
+        // Parse PAGETITLE
+        pagetitle = new PAGETITLE();
+        pagetitle.parse();
 
+        // Parse PAGESTUFF
+        while(tokenizer.moreTokens()){
+            PAGESTUFF pagestuff = new PAGESTUFF();
+            pagestuff.parse();
+            pstf.add(pagestuff);
+        }
     }
 
     @Override
     public void evaluate() {
-        title.evaluate();
+        pagetitle.evaluate();
         for (PAGESTUFF ps: pstf) {
             ps.evaluate();
         }

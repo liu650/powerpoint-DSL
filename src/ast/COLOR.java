@@ -7,8 +7,11 @@ public class COLOR extends Node {
     String color;
     @Override
     public void parse() {
+        //tokenizer.getAndCheckNext("Color:");
+        // Parse Color
+        color=tokenizer.getNext(); // TODO case sensitive?
 
-        // let the user know if the current color is not supported.
+        // TODO let the user know if the current color is not supported.
         // throw exception? illegal input
     }
 

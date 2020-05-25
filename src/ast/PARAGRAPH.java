@@ -3,15 +3,16 @@ package ast;
 import libs.Node;
 
 public class PARAGRAPH extends Node {
-    CONTENT c;
+    CONTENT paragraph;
     @Override
     public void parse() {
-
+        paragraph=new CONTENT();
+        paragraph.parse();
     }
 
     @Override
     public void evaluate() {
-        c.evaluate();
+        paragraph.evaluate();
         String end  = "\\newline";
         writer.println(end);
     }

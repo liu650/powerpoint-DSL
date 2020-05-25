@@ -4,10 +4,13 @@ import libs.Node;
 
 public class AUTHOR extends Node {
     // AUTHOR::= "Author: " CONTENT
-    CONTENT ccontent;
+    CONTENT author;
     @Override
     public void parse() {
-
+        //tokenizer.getAndCheckNext("Author:");
+        // Parse Author
+        author = new CONTENT();
+        author.parse();
     }
 
     @Override
@@ -15,7 +18,7 @@ public class AUTHOR extends Node {
         String start = "\\author{";
         String end = "}\n";
         writer.println(start);
-        c.evaluate();
+        author.evaluate();
         writer.println(end);
     }
 }

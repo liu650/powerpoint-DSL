@@ -3,9 +3,12 @@ package ast;
 import libs.Node;
 
 public class FORMULA extends SENTENCE {
+    String formula;
     @Override
     public void parse() {
-
+        //tokenizer.getAndCheckNext("Formula:");
+        // Parse Color
+        formula=tokenizer.getNext();
     }
 
     @Override

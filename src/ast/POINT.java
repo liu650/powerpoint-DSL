@@ -1,12 +1,20 @@
 package ast;
+import java.util.ArrayList;
+import java.util.List;
 
 import libs.Node;
 
 public class POINT extends PAGESTUFF {
+    //POINT::= "BulletPoint: " (CONTENT)*
     List<CONTENT> loc = new ArrayList<>();
     @Override
     public void parse() {
-
+        // Parse content
+        while(tokenizer.moreTokens()){
+            CONTENT c = new CONTENT();
+            c.parse();
+            loc.add(c);
+        }
     }
 
     @Override

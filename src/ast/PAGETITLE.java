@@ -3,12 +3,17 @@ package ast;
 import libs.Node;
 
 public class PAGETITLE extends TITLE{
-    Content c;
-
+    CONTENT pagetitle;
+    @Override
+    public void parse() {
+        tokenizer.getAndCheckNext("Title:");
+        pagetitle=new CONTENT();
+        pagetitle.parse();
+    }
     @Override
     public void evaluate() {
         writer.print("\\begin{frame}{");
-        c.evaluate();
+        pagetitle.evaluate();
         writer.print("}\n");
     }
 }
