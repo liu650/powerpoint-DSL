@@ -20,7 +20,7 @@ public class Main {
         System.out.println("Done parsing");
         p.evaluate();
         System.out.println("Done evaluation");
-        Node.closeWriter();
+//        Node.closeWriter();
     }
 
 }
