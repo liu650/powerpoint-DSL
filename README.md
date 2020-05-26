@@ -1,9 +1,9 @@
 # powerpoint-DSL
 
 ## Motivation
-###Target User
-People who don't want to waste their time adjusting details in PowerPoint/ debugging Latex code.\\
-###Effect
+###Target User  
+People who don't want to waste their time adjusting details in PowerPoint/ debugging Latex code.   
+###Effect   
 Make some neat presentation slides without dealing with annoying details (parameters, debudding)
 ## Features
 1. Plain text input 
