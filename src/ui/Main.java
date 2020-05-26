@@ -11,7 +11,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-        List<String> literals = Arrays.asList("Title:", "Table:","[","]","|", "Content:");
+        List<String> literals = Arrays.asList("Title:", "Table:","[","]","|", "Content:", "COLOR:", "SIZE:", "BI:"
+                , " "); // TODO: space, in theory, should not be a literal.
         Tokenizer.makeTokenizer("input.thtml",literals);
         Node.setWriter("output.html");
         PROGRAM p = new PROGRAM();

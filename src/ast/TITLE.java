@@ -4,18 +4,18 @@ import libs.Node;
 
 public class TITLE extends Node{
     // TITLE::="Title= " CONTENT “;”
-    CONTENT title;
+    CONTENT titleContent = null;
     @Override
     public void parse() {
-        tokenizer.getAndCheckNext("Title:");
-        title = new CONTENT();
-        title.parse();
+        tokenizer.getAndCheckNext("TITLE:");
+        titleContent = new CONTENT();
+        titleContent.parse();
     }
 
     @Override
     public void evaluate() {
         writer.print("\\title{");
-        title.evaluate();
+        titleContent.evaluate();
         writer.print("}\n");
     }
 }
