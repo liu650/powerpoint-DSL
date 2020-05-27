@@ -41,7 +41,7 @@ FORMULA::= "Formula: " STRING  //STRETCH GOAL
 ### Note
 1. When we say "STRING" here, we mean any string without whitespaces and that is not a keyword.
 2. Available colors: red, green, blue ... (there might be more ...)
-3. Available font sizes: LARGE, Large, large
+3. Available font sizes: small, normal, large, huge
 4. Available font styles: bold, italic
 5. Animations are not supported
 
