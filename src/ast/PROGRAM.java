@@ -18,10 +18,8 @@ public class PROGRAM extends Node {
 
     public void parse(){
         // Parse TITLE
-        if (tokenizer.checkToken("TITLE:")) {
-            title = new TITLE();
-            title.parse();
-        }
+        title = new TITLE();
+        title.parse();
 
         // Parse AUTHOR
         if (tokenizer.checkToken("Author:")){

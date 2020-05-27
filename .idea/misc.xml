@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="JavaScriptSettings">
-    <option name="languageLevel" value="ES6" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
-<<<<<<< HEAD
-  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
-=======
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="14" project-jdk-type="JavaSDK" />
->>>>>>> d6108ebeebf0b00283fc0b4795b1c23d624abc24
 </project>

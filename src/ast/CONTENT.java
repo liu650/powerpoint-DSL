@@ -12,7 +12,7 @@ public class CONTENT extends Node {
     List<SENTENCE> sentences = new ArrayList<SENTENCE>();
     @Override
     public void parse() {
-        tokenizer.getAndCheckNext("Content:");
+        //TODO
         // Parse Content
 
         // the following has been changed in the latest github version

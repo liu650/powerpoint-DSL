@@ -7,7 +7,7 @@ public class TITLE extends Node{
     CONTENT titleContent = null;
     @Override
     public void parse() {
-        tokenizer.getAndCheckNext("TITLE:");
+        tokenizer.getAndCheckNext("Title:");
         titleContent = new CONTENT();
         titleContent.parse();
     }
