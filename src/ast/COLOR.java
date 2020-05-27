@@ -7,9 +7,9 @@ public class COLOR extends Node {
     String color;
     @Override
     public void parse() {
-        //tokenizer.getAndCheckNext("Color:");
+        tokenizer.getAndCheckNext("Color:");
         // Parse Color
-        color=tokenizer.getNext(); // TODO case sensitive?
+        color = tokenizer.getNext().toLowerCase();
 
         // TODO let the user know if the current color is not supported.
         // throw exception? illegal input
@@ -17,6 +17,11 @@ public class COLOR extends Node {
 
     @Override
     public void evaluate() {
-        writer.print(color);
+        writer.print(toString());
+    }
+
+    @Override
+    public String toString(){
+        return color;
     }
 }

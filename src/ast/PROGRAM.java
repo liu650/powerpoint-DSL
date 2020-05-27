@@ -8,26 +8,25 @@ import java.util.List;
 
 public class PROGRAM extends Node {
     //PROGRAM::= TITLE AUTHOR? (SECTION)*
-    TITLE title;
-    AUTHOR author;
-    List<SECTION> sections = new ArrayList<>();
+    TITLE title = null;
+    AUTHOR author = null;
+   List<SECTION> sections = new ArrayList<>();
 
-    // Fields for evaluation
     String start = "";
     String end = "\\end{document}";
 
     public void parse(){
         // Parse TITLE
-        title = new TITLE();
-        title.parse();
+        if (tokenizer.checkToken("Title:")) {
+            title = new TITLE();
+            title.parse();
+        }
 
         // Parse AUTHOR
-        if (tokenizer.checkToken("Author:")){
-            tokenizer.getNext();
+        if (tokenizer.checkToken("Author:")) {
             author = new AUTHOR();
             author.parse();
         }
-
 
         // Parse SECTION
         while(tokenizer.moreTokens() && tokenizer.checkToken("Section:")){
@@ -42,9 +41,12 @@ public class PROGRAM extends Node {
         writer.println(start);
 
         // Evaluate Title
-        title.evaluate();
+        if (title != null)
+            title.evaluate();
+
         // Evaluate author
-        author.evaluate();
+        if (author != null)
+            author.evaluate();
 
         // print \maketitle
         String make = "\\maketitle\n";

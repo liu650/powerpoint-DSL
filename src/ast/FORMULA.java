@@ -6,7 +6,8 @@ public class FORMULA extends SENTENCE {
     String formula;
     @Override
     public void parse() {
-        //tokenizer.getAndCheckNext("Formula:");
+        //TODO: take string temporary, need to convert it to a LaTex expression
+        tokenizer.getAndCheckNext("Formula:");
         // Parse Color
         formula=tokenizer.getNext();
     }
@@ -14,6 +15,7 @@ public class FORMULA extends SENTENCE {
     @Override
     public void evaluate() {
         // TODO
+        System.out.println("Process formula:" + formula);
     }
 }
 /*

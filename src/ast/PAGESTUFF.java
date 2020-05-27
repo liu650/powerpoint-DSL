@@ -3,10 +3,10 @@ package ast;
 import libs.Node;
 
 public class PAGESTUFF extends Node{
-    // PAGESTUFF::== POINT | PARAGRAPH | IMAGE
+    // PAGESTUFF::== POINT | PARAGRAPH | IMAGES
     POINT point;
     PARAGRAPH paragraph;
-    IMAGE image;
+    IMAGES IMAGES;
     @Override
     public void parse() {
         // Parse PAGESTUFF
@@ -20,8 +20,8 @@ public class PAGESTUFF extends Node{
                 paragraph.parse();
                 break;
             case "Image:":
-                image = new IMAGE();
-                image.parse();
+                IMAGES = new IMAGES();
+                IMAGES.parse();
                 break;
             default:
                 throw new RuntimeException("Unexpected token!");
