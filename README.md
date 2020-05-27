@@ -17,25 +17,24 @@ Make some neat presentation slides without dealing with annoying details (parame
 
 ## Usage
 ### Grammar
-PROGRAM::= TITLE (AUTHOR)? (SECTION)*
-TITLE::="Title: " CONTENT
-AUTHOR::= "Author: " CONTENT
-SECTION: "Section: " TITLE (PAGE)*
-PAGE::= "NewPage: " TITLE PAGESTUFF*
-PAGESTUFF::= POINT | PARAGRAPH | IMAGE
-POINT::= "BulletPoint: " CONTENT
-PARAGRAPH ::= “Paragraph”: CONTENT
-IMAGE ::= “Image:” IMAGEREF
-IMAGEREF::= URL|PATH
-URL::= "ImageUrl:" STRING
-PATH::= "ImagePATH: " STRING
-CONTENT::= (( “@(” (SIZE | BI | COLOR)+  “)” )?  SENTENCE)+
-  // EXAMPLE : @(bold, RED) Hello ADAD
-SENTENCE::= STRING
-
-SIZE::= “Small” or “Normal” or "Big" or "Large" or "Huge”
-BI:: = "Bold" or "Italic”
-COLOR:: = "red" or "green" ...
+PROGRAM::= TITLE (AUTHOR)? (SECTION)* \
+TITLE::="Title: " CONTENT \
+AUTHOR::= "Author: " CONTENT \
+SECTION: "Section: " TITLE (PAGE)* \
+PAGE::= "NewPage: " TITLE PAGESTUFF* \
+PAGESTUFF::= POINT | PARAGRAPH | IMAGE \
+POINT::= "BulletPoint: " CONTENT \
+PARAGRAPH ::= “Paragraph”: CONTENT \
+IMAGE ::= “Image:” IMAGEREF \
+IMAGEREF::= URL|PATH \
+URL::= "ImageUrl:" STRING \
+PATH::= "ImagePATH: " STRING \
+CONTENT::= (( “@(” (SIZE | BI | COLOR)+  “)” )?  SENTENCE)+       //EXAMPLE : @(bold, RED) Hello ADAD \
+SENTENCE::= STRING \
+ \
+SIZE::= “Small” or “Normal” or "Big" or "Large" or "Huge” \
+BI:: = "Bold" or "Italic” \
+COLOR:: = "red" or "green" ... \
 
 FORMULA::= "Formula: " STRING  //STRETCH GOAL
 
