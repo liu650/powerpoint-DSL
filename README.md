@@ -33,9 +33,9 @@ PATH::= "ImagePATH: " STRING \
 CONTENT::= (( “@(” (SIZE | BI | COLOR)+  “)” )?  SENTENCE)+       //EXAMPLE : @(bold, RED) Hello ADAD \
 SENTENCE::= STRING \
  \
-SIZE::= “Small” or “Normal” or "Big" or "Large" or "Huge” \
-BI:: = "Bold" or "Italic” \
-COLOR:: = "red" or "green" ... \
+SIZE::= "Size: " "“Small” or “Normal” or "Big" or "Large" or "Huge” \
+BI:: = "BI: " "Bold" or "Italic” \
+COLOR:: = "Color: ""red" or "green" ... \
 
 FORMULA::= "Formula: " STRING  //STRETCH GOAL
 
@@ -46,6 +46,7 @@ FORMULA::= "Formula: " STRING  //STRETCH GOAL
 3. Available font sizes: small, normal, big, large, huge
 4. Available font styles: bold, italic
 5. Animations are not supported
+6. Automatic image size fit is not supported.
 
 ## Contributors
 Feiyi Wang, Marta Yao, Pengwei Zhou, Jialu Zhang, Jialin Liu

@@ -2,17 +2,15 @@ package ast;
 import java.util.ArrayList;
 import java.util.List;
 import libs.Node;
-// CONTENT::= "Content:"( ("SETTINGS")?  (STRING) )| FORMULA)
 public class CONTENT extends Node {
     SIZE size = null;
     COLOR color = null;
-    BI bi = null;
-    List<SENTENCE> sentences = new ArrayList<SENTENCE>();
+    BI bi = new BI();
+    String sentence = ""; // from list of sentence to single sentence
     @Override
     public void parse() {
         //TODO
         // Parse Content
-
         // the following has been changed in the latest github version
 
 //            case "Settings:":
@@ -25,19 +23,27 @@ public class CONTENT extends Node {
 //                FORMULA formula = new FORMULA();
 //                formula.parse();
 //                break;
-        if (tokenizer.checkToken("Size:")) {
-            size = new SIZE();
-            size.parse();
+        // TODO: debug
+        // modified grammar by adding keywords "Size: " "BI: "...
+        if (tokenizer.checkToken("@\\(")) {
+            while (tokenizer.moreTokens() && !tokenizer.checkToken("\\)@")) {
+                if (tokenizer.checkToken("Size:")) {
+                    size = new SIZE();
+                    size.parse();
+                }
+                if (tokenizer.checkToken("Bi:")) {
+                    //bi = new BI();
+                    bi.parse();
+                }
+                if (tokenizer.checkToken("Color:")) {
+                    color = new COLOR();
+                    color.parse();
+                }
+            }
         }
-        if (tokenizer.checkToken("Bi:")) {
-            bi = new BI();
-            bi.parse();
-        }
-        if (tokenizer.checkToken("Color:")) {
-            color = new COLOR();
-            color.parse();
-        }
+        sentence = tokenizer.getNext();
 
+        /*
         // take sentences input
         while (tokenizer.moreTokens() && !tokenizer.checkToken("FORMULA:")){
             // TODO: need to add termination symbol for sentences
@@ -45,6 +51,7 @@ public class CONTENT extends Node {
             s.parse();
             sentences.add(s);
         }
+        */
     }
 
     @Override
@@ -63,57 +70,72 @@ public class CONTENT extends Node {
         }
          */
 
-        for (SENTENCE s: sentences) {
-            System.out.println("process SENTENCE: " + s.toString());
+            System.out.println("process SENTENCE: " + sentence.toString());
             // TODO ==================================================================
             if (!bi.italic && !bi.bold && size == null && color == null) {
                 //0000
+                writer.println(sentence);
             }
             if (!bi.italic && !bi.bold && size == null && color != null) {
                 // 0001
+                writer.println("{\\color{" + color.color + "}" + sentence + "}");
             }
             if (!bi.italic && !bi.bold && size != null && color == null) {
                 //0010
+                writer.println("{\\" + size.size + " " + sentence + "}");
             }
             if (!bi.italic && !bi.bold && size != null && color != null) {
                 // 0011
+                writer.println("{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}" );
             }
             if (!bi.italic && bi.bold && size == null && color == null) {
                 //0100
+                writer.println("{\\bf "  + sentence + "}");
             }
             if (!bi.italic && bi.bold && size == null && color != null) {
                 //0101
+                // TODO {\it {\bf{\Large {\color{blue} Large bold italic blue } } }}\newline
+                writer.println("{\\bf{\\color{" +color.color +"}" + sentence + "}}" );
             }
             if (!bi.italic && bi.bold && size != null && color == null) {
                 //0110
+                writer.println("{\\bf{\\" + size.size + " " + sentence + "}}");
             }
             if (!bi.italic && bi.bold && size != null && color != null) {
                 // 0111
+                writer.println("{\\bf{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}}");
             }
             if (bi.italic && !bi.bold && size == null && color == null) {
                 // 1000
+                writer.println("{\\it " + sentence + "}");
             }
             if (bi.italic && !bi.bold && size == null && color != null) {
                 // 1001
+                writer.println("{\\it{\\color{" + color.color + "}" +sentence + "}}" );
             }
             if (bi.italic && !bi.bold && size != null && color == null) {
                 // 1010
+                writer.println("{\\it{\\" + size.size + " " + sentence + "}}");
             }
             if (bi.italic && !bi.bold && size != null && color != null) {
                 // 1011
+                writer.println("{\\it{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}}");
             }
             if (bi.italic && bi.bold && size == null && color == null) {
                 // 1100
+                writer.println("{\\it{\\bf " + sentence + "}}");
             }
             if (bi.italic && bi.bold && size == null && color != null) {
                 // 1101
+                writer.println("{\\it{\\bf{\\color{" + color.color + "}" + sentence + "}}}");
             }
             if (bi.italic && bi.bold && size != null && color == null) {
                 // 1110
+                writer.println("{\\it{\\bf{\\" + size.size + " " + sentence + "}}}");
             }
             if (bi.italic && bi.bold && size != null && color != null) {
                 // 1111
+                writer.println("{\\it{\\bf{\\" + size.size + "{\\color{" + color.color +"}" + sentence + "}}}}");
             }
-        }
     }
 }

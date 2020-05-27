@@ -7,6 +7,11 @@ public class BI extends Node {
     //String bi;
     boolean bold;
     boolean italic;
+
+    BI(){
+        this.bold = false;
+        this.italic = false;
+    }
     @Override
     public void parse() {
         //tokenizer.getAndCheckNext("bi:");
@@ -16,7 +21,7 @@ public class BI extends Node {
                 this.bold = true;
                 break;
             case "Italic":
-                this.italic = true; // TODO case sensitive?
+                this.italic = true; // TODO case sensitive? Yes
                 break;
             default:
                 throw new RuntimeException("Unexpected token!");

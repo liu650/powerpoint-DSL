@@ -1,6 +1,6 @@
 import ast.PROGRAM;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 public class TestParse {
     private String input;
     private PROGRAM program = new PROGRAM();
-    @BeforeEach
+    @Before
     public void setup(){
 
     }

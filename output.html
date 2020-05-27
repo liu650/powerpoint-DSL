@@ -1,5 +1,35 @@
+\documentclass[11pt]{beamer}
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\usepackage{color,xcolor}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 
-\title{}
+\setbeamertemplate{headline}
+{
+   \leavevmode%
+   \hbox{%
+   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+     \usebeamerfont{section in head/foot}\thesection.\ \insertsectionhead\hspace*{2ex}
+   \end{beamercolorbox}%
+   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{subsection in head/foot}%
+     \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
+   \end{beamercolorbox}}%
+   \vskip0pt%
+}
+
+\begin{document}
+\title{@(Color: blue) slide
+}
+\author{
+Author:
+}
+
 \maketitle
 
 \begin{frame}{Table of contents}
