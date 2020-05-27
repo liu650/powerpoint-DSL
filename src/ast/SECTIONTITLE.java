@@ -1,7 +1,5 @@
 package ast;
 
-import libs.Node;
-
 public class SECTIONTITLE extends TITLE{
     CONTENT sectiontitle;
     @Override
@@ -17,4 +15,6 @@ public class SECTIONTITLE extends TITLE{
         writer.print("}\n");
     }
 }
-
+/*
+\section{\bf{S1: test paragraph and settings}}
+ */

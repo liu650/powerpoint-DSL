@@ -14,6 +14,10 @@ public class Main {
        List<String> literals = Arrays.asList("Title:", "Table:","[","]","|");
         Tokenizer.makeTokenizer("input.thtml",literals);
 //        Node.setWriter("output.html");
+        List<String> literals = Arrays.asList("Title:", "Table:","[","]","|", "Content:", "COLOR:", "SIZE:", "BI:"
+                , " "); // TODO: space, in theory, should not be a literal.
+        Tokenizer.makeTokenizer("input.thtml",literals);
+        Node.setWriter("output.html");
         PROGRAM p = new PROGRAM();
         System.out.println("Done tokenizing");
         p.parse();

@@ -1,6 +1,7 @@
 package libs;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -52,6 +53,10 @@ public class Tokenizer {
         for (int i = 0; i < tokens.length; i++) {
             tokens[i] = tokens[i].trim();
         }
+
+        //6. Remove all empty tokens
+        tokens = Arrays.stream(tokens).filter(s -> !s.isEmpty()).toArray(String[]::new);
+
         System.out.println(Arrays.asList(tokens));
     }
 
