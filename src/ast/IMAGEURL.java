@@ -12,8 +12,9 @@ public class IMAGEURL extends Node{
 
     @Override
     public void evaluate() {
-
+        writer.print(url);
     }
+
 }
 
 

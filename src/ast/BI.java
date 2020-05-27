@@ -4,7 +4,7 @@ import libs.Node;
 
 public class BI extends Node {
     // BI:: = "bi:" ("Bold" or "Italic")
-    String bi;
+    //String bi;
     boolean bold;
     boolean italic;
     @Override
@@ -13,10 +13,10 @@ public class BI extends Node {
         // Parse BI
         switch (tokenizer.getNext()) {
             case "Bold":
-                this.bi = "Bold";
+                this.bold = true;
                 break;
             case "Italic":
-                this.bi = "Italic"; // TODO case sensitive?
+                this.italic = true; // TODO case sensitive?
                 break;
             default:
                 throw new RuntimeException("Unexpected token!");

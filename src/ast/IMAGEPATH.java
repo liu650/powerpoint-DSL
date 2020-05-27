@@ -13,7 +13,7 @@ public class IMAGEPATH extends IMAGEREF{
 
     @Override
     public void evaluate() {
-
+        writer.print(path);
     }
 }
 

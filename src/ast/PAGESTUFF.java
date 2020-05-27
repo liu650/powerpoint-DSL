@@ -4,9 +4,9 @@ import libs.Node;
 
 public class PAGESTUFF extends Node{
     // PAGESTUFF::== POINT | PARAGRAPH | IMAGES
-    POINT point;
-    PARAGRAPH paragraph;
-    IMAGES IMAGES;
+    POINT point = null;
+    PARAGRAPH paragraph = null;
+    IMAGES IMAGES = null;
     @Override
     public void parse() {
         // Parse PAGESTUFF
@@ -30,7 +30,15 @@ public class PAGESTUFF extends Node{
 
     @Override
     public void evaluate() {
-
+        if (point != null) {
+            point.evaluate();
+        }
+        if (paragraph != null) {
+            paragraph.evaluate();
+        }
+        if (IMAGES != null) {
+            IMAGES.evaluate();
+        }
     }
     // nothing
 }

@@ -51,7 +51,9 @@ public class CONTENT extends Node {
     public void evaluate() {
         // TODO: change this method to toString later
         // TODO: implement a real evaluate()
+        // TODO {\it {\bf{\Large {\color{blue} Large bold italic blue } } }}\newline
         System.out.println("process CONTENT: ");
+        /*
         if (size != null){
             System.out.println("process SIZE = " + size.toString());
         } if (bi != null) {
@@ -59,9 +61,59 @@ public class CONTENT extends Node {
         } if (color != null) {
             System.out.println("process COLOR = " + color.toString());
         }
+         */
 
-        for (SENTENCE s: sentences){
+        for (SENTENCE s: sentences) {
             System.out.println("process SENTENCE: " + s.toString());
+            // TODO ==================================================================
+            if (!bi.italic && !bi.bold && size == null && color == null) {
+                //0000
+            }
+            if (!bi.italic && !bi.bold && size == null && color != null) {
+                // 0001
+            }
+            if (!bi.italic && !bi.bold && size != null && color == null) {
+                //0010
+            }
+            if (!bi.italic && !bi.bold && size != null && color != null) {
+                // 0011
+            }
+            if (!bi.italic && bi.bold && size == null && color == null) {
+                //0100
+            }
+            if (!bi.italic && bi.bold && size == null && color != null) {
+                //0101
+            }
+            if (!bi.italic && bi.bold && size != null && color == null) {
+                //0110
+            }
+            if (!bi.italic && bi.bold && size != null && color != null) {
+                // 0111
+            }
+            if (bi.italic && !bi.bold && size == null && color == null) {
+                // 1000
+            }
+            if (bi.italic && !bi.bold && size == null && color != null) {
+                // 1001
+            }
+            if (bi.italic && !bi.bold && size != null && color == null) {
+                // 1010
+            }
+            if (bi.italic && !bi.bold && size != null && color != null) {
+                // 1011
+            }
+            if (bi.italic && bi.bold && size == null && color == null) {
+                // 1100
+            }
+            if (bi.italic && bi.bold && size == null && color != null) {
+                // 1101
+            }
+            if (bi.italic && bi.bold && size != null && color == null) {
+                // 1110
+            }
+            if (bi.italic && bi.bold && size != null && color != null) {
+                // 1111
+            }
         }
     }
 }
