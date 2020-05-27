@@ -42,6 +42,7 @@ FORMULA::= "Formula: " STRING  //STRETCH GOAL
 ### Note
 1. When we say "STRING" here, we mean any string without whitespaces and that is not a keyword.
 2. Available colors: 19 basic colors of xcolor package.
+![](basecolors.png)
 3. Available font sizes: small, normal, big, large, huge
 4. Available font styles: bold, italic
 5. Animations are not supported
