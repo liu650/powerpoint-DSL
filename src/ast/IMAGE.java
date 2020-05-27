@@ -1,12 +1,21 @@
 package ast;
 
 import libs.Node;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IMAGE extends PAGESTUFF {
+    //IMAGE ::= “Image:” (IMAGEREF)*
     List<IMAGEREF> images = new ArrayList<>();
     @Override
     public void parse() {
-
+        //tokenizer.getAndCheckNext("Image:");
+        while(tokenizer.moreTokens()){
+            //tokenizer.getNext();
+            IMAGEREF i = new IMAGEREF();
+            i.parse();
+            images.add(i);
+        }
     }
 
     @Override

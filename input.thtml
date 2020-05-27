@@ -1,10 +1,34 @@
-Title: My Day
-Table:
-[Date | Time | Activity ]
-[Sept 1 | 9am | Get to school ]
-[Sept 1 | 11am | Have lunch ]
+Title: Introduction to CS (DataStructures, Algorithms, Proofs)
+Author: John Ama, Bob Sama, Hama
 
-Table:
-[Date | Lecture | Slides ]
-[Sept 10 | Welcome to 410 | <a href="nowhere.html">this goes nowhere</a>]
-[Sept 15 | Final exam (last year) | Q&A slides will be posted]
+Section: Chapter1: @(bold, italic, Huge, red) DataStructures
+NewPage: @(bold, italic, Large, red) Intro to Array
+BulletPoint:  Array is a list. of ……..
+BulletPoint:  Running time is  O(n).
+BulletPoint:  Space Complexity is  O(n).
+
+NewPage: Intro to LinkedList
+BulletPoint:  Array is a list. of ……..
+BulletPoint:  Running time is  O(n).
+BulletPoint:  Space Complexity is  O(n).
+
+NewPage: Array vs LinkedList
+PARAGRAPH:  @(bold, italic,14, red) This is a paragraphasdklasdjasdkasljdaslkjdajksdjaskldjasdlkasjdlkasjdaslkdjasldkajdlkasdjalskdja
+
+NewPage: Image of Graph
+Image Url: www.google.com/dadsadasdasdads
+
+
+Section: Chapter2: Algorithms
+NewPage: Intro to QUICKSORT
+PARAGRAPH:  QUICKSORT kadhashdajkshdkjadjkahdkjshdja
+
+Section: Chapter3: Proofs
+NewPage: Intro to Reduction Proof
+PARAGRAPH:  Array is asda we say "STRING" here,
+we mean any string without whites mean any string
+without whites mean any string without whites mean any string without whites
+"Formula: "  2x + 1 = x + 1 + 1
+"Formula: "  2x + 1 = x + 2
+"Formula: "  x =  1
+Conclusion: X=1.. This is proof

@@ -7,23 +7,34 @@ import java.util.List;
 
 
 public class PROGRAM extends Node {
+    //PROGRAM::= TITLE AUTHOR? (SECTION)*
     TITLE title;
     AUTHOR author;
-   List<SECTION> sections = new ArrayList<>();
+    List<SECTION> sections = new ArrayList<>();
+
+    // Fields for evaluation
     String start = "";
     String end = "\\end{document}";
 
     public void parse(){
-        // Parse Title
+        // Parse TITLE
         title = new TITLE();
         title.parse();
 
-        // Parse Tables
-//        while(tokenizer.moreTokens()){
-//            TABLE t = new TABLE();
-//            t.parse();
-//            tables.add(t);
-//        }
+        // Parse AUTHOR
+        if (tokenizer.checkToken("Author:")){
+            tokenizer.getNext();
+            author = new AUTHOR();
+            author.parse();
+        }
+
+
+        // Parse SECTION
+        while(tokenizer.moreTokens() && tokenizer.checkToken("Section:")){
+            SECTION s = new SECTION();
+            s.parse();
+            sections.add(s);
+        }
     }
 
     @Override
