@@ -22,20 +22,16 @@ public class PROGRAM extends Node {
         title.parse();
 
         // Parse AUTHOR
-        if (tokenizer.checkToken("Author:")){
-            tokenizer.getNext();
+        if (tokenizer.checkToken("Author:")) {
             author = new AUTHOR();
             author.parse();
         }
 
-
         // Parse SECTION
-        if (tokenizer.checkToken("SECTION:")) {
-            while (tokenizer.moreTokens()) {
-                SECTION s = new SECTION();
-                s.parse();
-                sections.add(s);
-            }
+        while(tokenizer.moreTokens() && tokenizer.checkToken("Section:")){
+            SECTION s = new SECTION();
+            s.parse();
+            sections.add(s);
         }
     }
 

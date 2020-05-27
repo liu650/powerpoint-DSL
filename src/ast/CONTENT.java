@@ -1,8 +1,6 @@
 package ast;
 import java.util.ArrayList;
 import java.util.List;
-
-import jdk.swing.interop.SwingInterOpUtils;
 import libs.Node;
 // CONTENT::= "Content:"( ("SETTINGS")?  (STRING) )| FORMULA)
 public class CONTENT extends Node {
@@ -27,15 +25,15 @@ public class CONTENT extends Node {
 //                FORMULA formula = new FORMULA();
 //                formula.parse();
 //                break;
-        if (tokenizer.checkToken("SIZE:")) {
+        if (tokenizer.checkToken("Size:")) {
             size = new SIZE();
             size.parse();
         }
-        if (tokenizer.checkToken("BI:")) {
+        if (tokenizer.checkToken("Bi:")) {
             bi = new BI();
             bi.parse();
         }
-        if (tokenizer.checkToken("COLOR:")) {
+        if (tokenizer.checkToken("Color:")) {
             color = new COLOR();
             color.parse();
         }

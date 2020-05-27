@@ -7,7 +7,7 @@ public class COLOR extends Node {
     String color;
     @Override
     public void parse() {
-        tokenizer.getAndCheckNext("COLOR:");
+        tokenizer.getAndCheckNext("Color:");
         // Parse Color
         color = tokenizer.getNext().toLowerCase();
 
