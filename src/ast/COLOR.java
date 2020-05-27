@@ -14,6 +14,8 @@ public class COLOR extends Node {
         tokenizer.getAndCheckNext("Color:");
         // Parse Color
         color = tokenizer.getNext().toLowerCase();
+        System.out.println(color + " wait " );
+        System.out.println(color == "blue");
         colorSet.add("black");
         colorSet.add("darkgray");
         colorSet.add("brown");

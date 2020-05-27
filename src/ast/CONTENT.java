@@ -26,13 +26,14 @@ public class CONTENT extends Node {
         // TODO: debug
         // modified grammar by adding keywords "Size: " "BI: "...
         if (tokenizer.checkToken("@\\(")) {
+            tokenizer.getNext();
             while (tokenizer.moreTokens() && !tokenizer.checkToken("\\)@")) {
                 if (tokenizer.checkToken("Size:")) {
                     size = new SIZE();
                     size.parse();
                 }
                 if (tokenizer.checkToken("Bi:")) {
-                    //bi = new BI();
+
                     bi.parse();
                 }
                 if (tokenizer.checkToken("Color:")) {
@@ -40,8 +41,10 @@ public class CONTENT extends Node {
                     color.parse();
                 }
             }
+            tokenizer.getAndCheckNext("\\)@");
         }
         sentence = tokenizer.getNext();
+        System.out.println("SENTENCE IS __:    " + sentence);
 
         /*
         // take sentences input

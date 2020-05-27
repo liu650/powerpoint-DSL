@@ -109,6 +109,7 @@ public class Tokenizer {
     public boolean checkToken(String regexp){
         String s = checkNext();
         System.out.println("comparing: |"+s+"|  to  |"+regexp+"|");
+        System.out.println(s.matches(regexp));
         return (s.matches(regexp));
     }
 

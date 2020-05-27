@@ -14,13 +14,15 @@ public class BI extends Node {
     }
     @Override
     public void parse() {
-        //tokenizer.getAndCheckNext("bi:");
+        tokenizer.getAndCheckNext("Bi:");
         // Parse BI
-        switch (tokenizer.getNext()) {
-            case "Bold":
+        String s = tokenizer.getNext().toLowerCase();
+        System.out.println(s);
+        switch (s ) {
+            case "bold":
                 this.bold = true;
                 break;
-            case "Italic":
+            case "italic":
                 this.italic = true; // TODO case sensitive? Yes
                 break;
             default:

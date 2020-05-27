@@ -44,6 +44,7 @@ public class PROGRAM extends Node {
     public void parse(){
         // Parse TITLE
         if (tokenizer.checkToken("Title:")) {
+
             title = new TITLE();
             title.parse();
         }
@@ -51,6 +52,8 @@ public class PROGRAM extends Node {
 
         // Parse AUTHOR
         if (tokenizer.checkToken("Author:")) {
+
+
             author = new AUTHOR();
             author.parse();
         }
