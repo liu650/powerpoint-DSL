@@ -2,17 +2,15 @@ package ast;
 import java.util.ArrayList;
 import java.util.List;
 import libs.Node;
-// CONTENT::= "Content:"( ("SETTINGS")?  (STRING) )| FORMULA)
 public class CONTENT extends Node {
     SIZE size = null;
     COLOR color = null;
-    BI bi = null;
-    List<SENTENCE> sentences = new ArrayList<SENTENCE>();
+    BI bi = new BI();
+    String sentence = ""; // from list of sentence to single sentence
     @Override
     public void parse() {
         //TODO
         // Parse Content
-
         // the following has been changed in the latest github version
 
 //            case "Settings:":
@@ -25,19 +23,34 @@ public class CONTENT extends Node {
 //                FORMULA formula = new FORMULA();
 //                formula.parse();
 //                break;
-        if (tokenizer.checkToken("Size:")) {
-            size = new SIZE();
-            size.parse();
-        }
-        if (tokenizer.checkToken("Bi:")) {
-            bi = new BI();
-            bi.parse();
-        }
-        if (tokenizer.checkToken("Color:")) {
-            color = new COLOR();
-            color.parse();
-        }
+        // TODO: debug
+        // modified grammar by adding keywords "Size: " "BI: "...
 
+        if (tokenizer.checkToken("@\\(")) {
+            tokenizer.getNext();
+            while (tokenizer.moreTokens() && !tokenizer.checkToken("\\)@")) {
+                if (tokenizer.checkToken("Size:")) {
+                    size = new SIZE();
+                    size.parse();
+                }
+                if (tokenizer.checkToken("Bi:")) {
+
+                    bi.parse();
+                }
+                if (tokenizer.checkToken("Color:")) {
+                    color = new COLOR();
+                    color.parse();
+                }
+            }
+            tokenizer.getAndCheckNext("\\)@");
+        }
+        sentence = tokenizer.getNext();
+        if (sentence == "NULLTOKEN") {
+            throw new RuntimeException("Missing document title");
+        }
+        System.out.println("SENTENCE IS __:    " + sentence);
+
+        /*
         // take sentences input
         while (tokenizer.moreTokens() && !tokenizer.checkToken("FORMULA:")){
             // TODO: need to add termination symbol for sentences
@@ -45,13 +58,16 @@ public class CONTENT extends Node {
             s.parse();
             sentences.add(s);
         }
+        */
     }
 
     @Override
     public void evaluate() {
         // TODO: change this method to toString later
         // TODO: implement a real evaluate()
+        // TODO {\it {\bf{\Large {\color{blue} Large bold italic blue } } }}\newline
         System.out.println("process CONTENT: ");
+        /*
         if (size != null){
             System.out.println("process SIZE = " + size.toString());
         } if (bi != null) {
@@ -59,9 +75,74 @@ public class CONTENT extends Node {
         } if (color != null) {
             System.out.println("process COLOR = " + color.toString());
         }
+         */
 
-        for (SENTENCE s: sentences){
-            System.out.println("process SENTENCE: " + s.toString());
-        }
+            System.out.println("process SENTENCE: " + sentence.toString());
+            // TODO ==================================================================
+            if (!bi.italic && !bi.bold && size == null && color == null) {
+                //0000
+                writer.print(sentence);
+            }
+            if (!bi.italic && !bi.bold && size == null && color != null) {
+                // 0001
+                writer.print("{\\color{" + color.color + "}" + sentence + "}");
+            }
+            if (!bi.italic && !bi.bold && size != null && color == null) {
+                //0010
+                writer.print("{\\" + size.size + " " + sentence + "}");
+            }
+            if (!bi.italic && !bi.bold && size != null && color != null) {
+                // 0011
+                writer.print("{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}" );
+            }
+            if (!bi.italic && bi.bold && size == null && color == null) {
+                //0100
+                writer.print("{\\bf "  + sentence + "}");
+            }
+            if (!bi.italic && bi.bold && size == null && color != null) {
+                //0101
+                // TODO {\it {\bf{\Large {\color{blue} Large bold italic blue } } }}\newline
+                writer.print("{\\bf{\\color{" +color.color +"}" + sentence + "}}" );
+            }
+            if (!bi.italic && bi.bold && size != null && color == null) {
+                //0110
+                writer.print("{\\bf{\\" + size.size + " " + sentence + "}}");
+            }
+            if (!bi.italic && bi.bold && size != null && color != null) {
+                // 0111
+                writer.print("{\\bf{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}}");
+            }
+            if (bi.italic && !bi.bold && size == null && color == null) {
+                // 1000
+                writer.print("{\\it " + sentence + "}");
+            }
+            if (bi.italic && !bi.bold && size == null && color != null) {
+                // 1001
+                writer.print("{\\it{\\color{" + color.color + "}" +sentence + "}}" );
+            }
+            if (bi.italic && !bi.bold && size != null && color == null) {
+                // 1010
+                writer.print("{\\it{\\" + size.size + " " + sentence + "}}");
+            }
+            if (bi.italic && !bi.bold && size != null && color != null) {
+                // 1011
+                writer.print("{\\it{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}}");
+            }
+            if (bi.italic && bi.bold && size == null && color == null) {
+                // 1100
+                writer.print("{\\it{\\bf " + sentence + "}}");
+            }
+            if (bi.italic && bi.bold && size == null && color != null) {
+                // 1101
+                writer.print("{\\it{\\bf{\\color{" + color.color + "}" + sentence + "}}}");
+            }
+            if (bi.italic && bi.bold && size != null && color == null) {
+                // 1110
+                writer.print("{\\it{\\bf{\\" + size.size + " " + sentence + "}}}");
+            }
+            if (bi.italic && bi.bold && size != null && color != null) {
+                // 1111
+                writer.print("{\\it{\\bf{\\" + size.size + "{\\color{" + color.color +"}" + sentence + "}}}}");
+            }
     }
 }

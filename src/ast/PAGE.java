@@ -17,10 +17,10 @@ public class PAGE extends Node {
         pagetitle.parse();
 
         // Parse PAGESTUFF
-        while(tokenizer.moreTokens()){
-            PAGESTUFF pagestuff = new PAGESTUFF();
-            pagestuff.parse();
-            pstf.add(pagestuff);
+        while(tokenizer.moreTokens() && !tokenizer.checkToken("NewPage:") && !tokenizer.checkToken("Section:")){
+            PAGESTUFF p = PAGESTUFF.make();
+            p.parse();
+            pstf.add(p);
         }
     }
 

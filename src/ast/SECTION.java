@@ -12,11 +12,12 @@ public class SECTION extends Node {
     @Override
     public void parse() {
         // Parse SECTIONTITLE
+        tokenizer.getAndCheckNext("Section:");
         sectiontitle = new SECTIONTITLE();
         sectiontitle.parse();
 
         // Parse PAGE
-        while(tokenizer.moreTokens()){
+        while(tokenizer.moreTokens() && !tokenizer.checkToken("Section:")){
             PAGE page = new PAGE();
             page.parse();
             pages.add(page);

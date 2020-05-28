@@ -44,7 +44,7 @@ public class Tokenizer {
         tokenizedProgram = tokenizedProgram.replace("__","_");
         System.out.println(tokenizedProgram);
         //4. Remove leading “_” character, then split on “_”
-        if(tokenizedProgram.length() > 0 && tokenizedProgram.charAt(0) == '_') {
+        if (tokenizedProgram.length() > 0 && tokenizedProgram.charAt(0) == '_') {
             tokenizedProgram = tokenizedProgram.substring(1); // without first character
         }
         tokens = tokenizedProgram.split("_");
@@ -109,6 +109,7 @@ public class Tokenizer {
     public boolean checkToken(String regexp){
         String s = checkNext();
         System.out.println("comparing: |"+s+"|  to  |"+regexp+"|");
+        System.out.println(s.matches(regexp));
         return (s.matches(regexp));
     }
 

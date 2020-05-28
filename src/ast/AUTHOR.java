@@ -7,7 +7,7 @@ public class AUTHOR extends Node {
     CONTENT authorContent;
     @Override
     public void parse() {
-        //tokenizer.getAndCheckNext("Author:");
+        tokenizer.getAndCheckNext("Author:");
         // Parse Author
         authorContent = new CONTENT();
         authorContent.parse();

@@ -1,38 +1,35 @@
 package ast;
 
 import libs.Node;
+import libs.Tokenizer;
 
 public class PAGESTUFF extends Node{
-    // PAGESTUFF::== POINT | PARAGRAPH | IMAGES
-    POINT point;
-    PARAGRAPH paragraph;
-    IMAGES IMAGES;
     @Override
     public void parse() {
-        // Parse PAGESTUFF
-        switch (tokenizer.getNext()) {
-            case "BulletPoint:":
-                point = new POINT();
-                point.parse();
-                break;
-            case "Paragraph:":
-                paragraph = new PARAGRAPH();
-                paragraph.parse();
-                break;
-            case "Image:":
-                IMAGES = new IMAGES();
-                IMAGES.parse();
-                break;
-            default:
-                throw new RuntimeException("Unexpected token!");
-        }
+
     }
 
     @Override
     public void evaluate() {
 
     }
-    // nothing
+    // PAGESTUFF::== POINT | PARAGRAPH | IMAGES
+
+    public static PAGESTUFF make(){
+
+        Tokenizer tokenizer = Tokenizer.getTokenizer();
+        if (tokenizer.checkToken("Paragraph:")) {
+            return new PARAGRAPH();
+
+        } else if (tokenizer.checkToken("BulletPoint:")) {
+            return new POINT();
+        } else if (tokenizer.checkToken("Image:")) {
+            return new IMAGES();
+        } else {
+            throw new RuntimeException("Invalid value: " + tokenizer.getNext());
+        }
+    }
+
 }
 
 

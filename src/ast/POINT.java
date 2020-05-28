@@ -10,7 +10,9 @@ public class POINT extends PAGESTUFF {
     @Override
     public void parse() {
         // Parse content
-        while(tokenizer.moreTokens()){
+
+        while(tokenizer.moreTokens() && tokenizer.checkToken("BulletPoint:")){
+            tokenizer.getNext();
             CONTENT c = new CONTENT();
             c.parse();
             loc.add(c);

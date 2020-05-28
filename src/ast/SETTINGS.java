@@ -9,7 +9,7 @@ public class SETTINGS extends Node {
     COLOR color;
     @Override
     public void parse() {
-
+        tokenizer.getAndCheckNext("@");
     }
 
     @Override

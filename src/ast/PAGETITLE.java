@@ -6,7 +6,6 @@ public class PAGETITLE extends TITLE{
     CONTENT pagetitle;
     @Override
     public void parse() {
-        tokenizer.getAndCheckNext("Title:");
         pagetitle=new CONTENT();
         pagetitle.parse();
     }
