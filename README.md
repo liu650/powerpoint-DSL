@@ -27,7 +27,7 @@ PAGESTUFF::= POINT | PARAGRAPH | IMAGE \
 POINT::= "BulletPoint: " CONTENT \
 PARAGRAPH ::= “Paragraph”: CONTENT \
 IMAGE ::= “Image:” IMAGEREF \
-IMAGEREF::= URL|PATH \
+IMAGEREF::= URL\
 URL::= "Url:" STRING \
 PATH::= "Path: " STRING \
 CONTENT::= (( “@(” (SIZE | BI | COLOR)+  “)” )?  SENTENCE)+       //EXAMPLE : @(bold, RED) Hello ADAD \
@@ -46,7 +46,9 @@ FORMULA::= "Formula: " STRING  //STRETCH GOAL
 3. Available font sizes: small, normal, big, large, huge
 4. Available font styles: bold, italic
 5. Animations are not supported
-6. Automatic image size fit is not supported.
+6. Automatic image size fit is not supported. 
+7. More than 4 images in a single page is not allowed.
+8. Title of section cannot be bold and italic at the same time. 
 
 ## Contributors
 Feiyi Wang, Marta Yao, Pengwei Zhou, Jialu Zhang, Jialin Liu
