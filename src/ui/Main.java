@@ -13,17 +13,17 @@ public class Main {
     public static String outputFolder = "out/";
 
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-        List<String> literals = Arrays.asList("Title:","Author:","Section:","NewPage:","BulletPoint:","Paragraph:","Image:","ImageUrl:","ImagePATH:"
-                ,"@(",")@","Formula:","`","$");
-        Tokenizer.makeTokenizer("input.thtml",literals);
-        Node.setWriter("output.html");
-        PROGRAM p = new PROGRAM();
-        System.out.println("Done tokenizing");
-        p.parse();
-        System.out.println("Done parsing");
-        p.evaluate();
-        System.out.println("Done evaluation");
-        Node.closeWriter();
+//        List<String> literals = Arrays.asList("Title:","Author:","Section:","NewPage:","BulletPoint:","Paragraph:","Image:","ImageUrl:","ImagePATH:"
+//                ,"@(",")@","Formula:","`","$");
+//        Tokenizer.makeTokenizer("input.thtml",literals);
+//        Node.setWriter("output.html");
+//        PROGRAM p = new PROGRAM();
+//        System.out.println("Done tokenizing");
+//        p.parse();
+//        System.out.println("Done parsing");
+//        p.evaluate();
+//        System.out.println("Done evaluation");
+//        Node.closeWriter();
 
         //take the beamer input, and convert it to slides output
         //any failure encounter here will throw errors
