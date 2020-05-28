@@ -19,47 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" name="Default Changelist" comment="implement slides generator and its helper methods,&#10;add test files">
-      <change afterPath="$PROJECT_DIR$/out/test_input/test_input.aux" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test_input/test_input.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test_input/test_input.nav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test_input/test_input.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test_input/test_input.snm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test_input/test_input.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test_input2/test_input2.aux" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test_input2/test_input2.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test_input2/test_input2.nav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test_input2/test_input2.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test_input2/test_input2.snm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test_input2/test_input2.toc" afterDir="false" />
+    <list default="true" id="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/AUTHOR.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/BI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/COLOR.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/CONTENT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/FORMULA.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/IMAGEPATH.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/IMAGEREF.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/IMAGES.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/IMAGEURL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/PAGE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/PAGESTUFF.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/PAGETITLE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/PARAGRAPH.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/POINT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/PROGRAM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/SECTION.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/SECTIONTITLE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/SENTENCE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/SETTINGS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/SIZE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/TITLE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ast/grammar.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/libs/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/libs/Tokenizer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/production/powerpoint-DSL/ui/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/test/powerpoint-DSL/TestEvaluate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputCache/test/powerpoint-DSL/TestParse.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +70,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -276,10 +237,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="413" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1280.777@0.23.1280.777" timestamp="1590644521126" />
-    <state x="0" y="23" width="1204" height="777" key="CommitChangelistDialog2" timestamp="1590647575789">
+    <state x="0" y="23" width="1204" height="777" key="CommitChangelistDialog2" timestamp="1590648293667">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="0" y="23" width="1204" height="777" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1590647575789" />
+    <state x="0" y="23" width="1204" height="777" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1590648293667" />
     <state x="52" y="23" key="CommitChangelistDialog2/50.23.1230.777@50.23.1230.777" timestamp="1590511654173" />
     <state x="52" y="23" key="CommitChangelistDialog2/52.23.1228.777@52.23.1228.777" timestamp="1590516978896" />
     <state x="55" y="23" key="CommitChangelistDialog2/55.23.1225.777@55.23.1225.777" timestamp="1590539440944" />
@@ -363,10 +324,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="556" y="279" width="229" height="253" key="MultipleFileMergeDialog/0.23.1280.777@0.23.1280.777" timestamp="1590635818714" />
-    <state x="0" y="23" key="SettingsEditor" timestamp="1590561825072">
+    <state x="37" y="23" key="SettingsEditor" timestamp="1590647786333">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="0" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1590561825072" />
+    <state x="37" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1590647786333" />
     <state x="50" y="23" key="SettingsEditor/50.23.1230.777@50.23.1230.777" timestamp="1590510164661" />
     <state x="55" y="23" key="SettingsEditor/55.23.1225.777@55.23.1225.777" timestamp="1590551770477" />
     <state x="518" y="328" key="VCS.ChangelistChooser" timestamp="1590558874979">
