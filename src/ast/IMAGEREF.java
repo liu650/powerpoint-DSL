@@ -1,34 +1,31 @@
 package ast;
 
 import libs.Node;
+import libs.Tokenizer;
 
 public class IMAGEREF extends Node{
-    //IMAGEREF::= URL|PATH
-    String ref;
-    IMAGEURL imageurl;
-    IMAGEPATH imagepath;
 
+    String address;
+
+    public static IMAGEREF make(){
+
+        Tokenizer tokenizer = Tokenizer.getTokenizer();
+        if (tokenizer.checkToken("Path: ")) {
+            return new IMAGEPATH();
+
+        } else if (tokenizer.checkToken("Url: ")) {
+            return new IMAGEURL();
+        } else {
+            throw new RuntimeException("Invalid value: " + tokenizer.getNext());
+        }
+    }
     @Override
     public void parse() {
-
-        // Parse IMAGEREF
-        switch (tokenizer.getNext()) {
-            case "Image Url:":
-                imageurl=new IMAGEURL();
-                imageurl.parse();
-                break;
-            case "Image PATH:":
-                imagepath =new IMAGEPATH();
-                imagepath.parse();
-                break;
-            default:
-                throw new RuntimeException("Unexpected token!");
-        }
     }
 
     @Override
     public void evaluate() {
-        writer.print(ref);
+        writer.print(address);
     }
 }
 

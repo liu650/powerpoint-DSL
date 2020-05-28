@@ -1,2 +1,2 @@
-Title: @(Color: blue)@ slide
-Author: @(Bi: bold)@ me
+Title: @(Color:blue Bi:italic)@ slide
+Author: @(Bi:italic Color:purple)@ me

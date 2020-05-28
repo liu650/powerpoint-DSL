@@ -2,17 +2,17 @@ package ast;
 
 import libs.Node;
 
-public class IMAGEURL extends Node{
-    String url;
+public class IMAGEURL extends IMAGEREF{
+    String address;
     @Override
     public void parse() {
-        //tokenizer.getAndCheckNext("Image Url:");
-        url=tokenizer.getNext(); //TODO Should we verify yrl?
+        tokenizer.getAndCheckNext("Url:");
+        address=tokenizer.getNext();
     }
 
     @Override
     public void evaluate() {
-        writer.print(url);
+        writer.print(address);
     }
 
 }

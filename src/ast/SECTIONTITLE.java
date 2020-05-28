@@ -4,7 +4,6 @@ public class SECTIONTITLE extends TITLE{
     CONTENT sectiontitle;
     @Override
     public void parse() {
-        tokenizer.getAndCheckNext("Title:");
         sectiontitle=new CONTENT();
         sectiontitle.parse();
     }

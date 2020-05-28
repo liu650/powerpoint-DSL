@@ -28,8 +28,8 @@ POINT::= "BulletPoint: " CONTENT \
 PARAGRAPH ::= “Paragraph”: CONTENT \
 IMAGE ::= “Image:” IMAGEREF \
 IMAGEREF::= URL|PATH \
-URL::= "ImageUrl:" STRING \
-PATH::= "ImagePATH: " STRING \
+URL::= "Url:" STRING \
+PATH::= "Path: " STRING \
 CONTENT::= (( “@(” (SIZE | BI | COLOR)+  “)” )?  SENTENCE)+       //EXAMPLE : @(bold, RED) Hello ADAD \
 SENTENCE::= STRING \
  \

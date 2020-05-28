@@ -44,7 +44,7 @@ public class Tokenizer {
         tokenizedProgram = tokenizedProgram.replace("__","_");
         System.out.println(tokenizedProgram);
         //4. Remove leading “_” character, then split on “_”
-        if(tokenizedProgram.length() > 0 && tokenizedProgram.charAt(0) == '_') {
+        if (tokenizedProgram.length() > 0 && tokenizedProgram.charAt(0) == '_') {
             tokenizedProgram = tokenizedProgram.substring(1); // without first character
         }
         tokens = tokenizedProgram.split("_");

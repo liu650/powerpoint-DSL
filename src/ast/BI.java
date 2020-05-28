@@ -17,7 +17,7 @@ public class BI extends Node {
         tokenizer.getAndCheckNext("Bi:");
         // Parse BI
         String s = tokenizer.getNext().toLowerCase();
-        System.out.println(s);
+
         switch (s ) {
             case "bold":
                 this.bold = true;

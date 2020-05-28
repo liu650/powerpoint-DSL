@@ -5,17 +5,17 @@ import java.util.List;
 
 public class IMAGES extends PAGESTUFF {
     //IMAGES ::= “Image:” (IMAGEREF)*
-    List<IMAGES> images = new ArrayList<>();
+    List<IMAGEREF> images = new ArrayList<>();
 
     @Override
     public void parse() {
-        //tokenizer.getAndCheckNext("Image:");
-        while(tokenizer.moreTokens()){
+        tokenizer.getAndCheckNext("Image:");
+        while(tokenizer.moreTokens() && !tokenizer.checkToken("NewPage:") && !tokenizer.checkToken("Section:")){
             //tokenizer.getNext();
-            IMAGEREF image = new IMAGEREF();
+            IMAGEREF image = IMAGEREF.make();
             image.parse();
-            // TODO: fix this
-            // images.add(image);
+
+            images.add(image);
         }
     }
 
@@ -31,14 +31,14 @@ public class IMAGES extends PAGESTUFF {
                     writer.print("}\n");
                     break;
                 case 2:
-                    for (IMAGES i : images) {
+                    for (IMAGEREF i : images) {
                         writer.print("\\includegraphics[width=.5\\textwidth]{");
                         i.evaluate();
                         writer.print("}\n");
                     }
                     break;
                 case 3:
-                    for (IMAGES i : images) {
+                    for (IMAGEREF i : images) {
                         writer.print("\\includegraphics[width=.3\\textwidth]{");
                         i.evaluate();
                         writer.print("}\n");

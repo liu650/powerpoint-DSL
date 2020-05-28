@@ -2,11 +2,12 @@ package ast;
 
 import libs.Node;
 
-public class PARAGRAPH extends Node {
+public class PARAGRAPH extends PAGESTUFF {
     CONTENT paragraph;
     @Override
     public void parse() {
-        paragraph=new CONTENT();
+        tokenizer.getAndCheckNext("Paragraph:");
+        paragraph = new CONTENT();
         paragraph.parse();
     }
 

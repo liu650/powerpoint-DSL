@@ -7,6 +7,7 @@ public class SIZE extends Node {
     String size = null;
     @Override
     public void parse() {
+        tokenizer.getAndCheckNext("Size:");
         switch (tokenizer.getNext()) {
             case "small":
                 size = "\\tiny";
