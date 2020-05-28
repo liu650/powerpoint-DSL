@@ -14,7 +14,19 @@ Make some neat presentation slides without dealing with annoying details (parame
 5. Table of contents based on sections (navigation on click)
 6. Mathematical formulas (elementary operations)  // stretch goal
 
-## Install
+## Mac Install
+1. Install [Homebrew](https://docs.brew.sh/Installation).
+2. Install [LaTex](https://tug.org/mactex/morepackages.html).
+   By typing the following command in your Terminal
+   
+   <code>brew cask install basictex</code>
+   
+   Note: `BasicTex`(80 MB) is highly recommended than `MacTex`(4 GB+) as it required less space.
+   
+
+## Windows Install
+1. Install [LaTex](https://www.latex-project.org/get/). 
+2. TBD
 
 ## Usage
 ### Grammar
