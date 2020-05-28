@@ -25,19 +25,6 @@ public class PROGRAM extends Node {
             "\\usepackage{color,xcolor}\n" +
             "\\newcommand{\\themename}{\\textbf{\\textsc{metropolis}}\\xspace}\n" +
             "\n" +
-            "\\setbeamertemplate{headline}\n" +
-            "{\n" +
-            "   \\leavevmode%\n" +
-            "   \\hbox{%\n" +
-            "   \\begin{beamercolorbox}[wd=.5\\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%\n" +
-            "     \\usebeamerfont{section in head/foot}\\thesection.\\ \\insertsectionhead\\hspace*{2ex}\n" +
-            "   \\end{beamercolorbox}%\n" +
-            "   \\begin{beamercolorbox}[wd=.5\\paperwidth,ht=2.25ex,dp=1ex,left]{subsection in head/foot}%\n" +
-            "     \\usebeamerfont{subsection in head/foot}\\hspace*{2ex}\\insertsubsectionhead\n" +
-            "   \\end{beamercolorbox}}%\n" +
-            "   \\vskip0pt%\n" +
-            "}\n" +
-            "\n" +
             "\\begin{document}";
     String end = "\\end{document}";
 

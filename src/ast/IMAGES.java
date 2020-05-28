@@ -17,6 +17,9 @@ public class IMAGES extends PAGESTUFF {
 
             images.add(image);
         }
+        if (images.size()>4) {
+            throw new RuntimeException("Too Many Pictures");
+        }
     }
 
     @Override
