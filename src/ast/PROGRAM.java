@@ -8,19 +8,18 @@ import java.util.List;
 
 public class PROGRAM extends Node {
     //PROGRAM::= TITLE AUTHOR? (SECTION)*
-    TITLE title = null;
-    AUTHOR author = null;
-   List<SECTION> sections = new ArrayList<>();
+    TITLE title= null;;
+    AUTHOR author= null;;
+    List<SECTION> sections = new ArrayList<>();
 
+    // Fields for evaluation
     String start = "";
     String end = "\\end{document}";
 
     public void parse(){
         // Parse TITLE
-        if (tokenizer.checkToken("Title:")) {
-            title = new TITLE();
-            title.parse();
-        }
+        title = new TITLE();
+        title.parse();
 
         // Parse AUTHOR
         if (tokenizer.checkToken("Author:")) {
