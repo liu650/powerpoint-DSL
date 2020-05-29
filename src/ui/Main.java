@@ -25,7 +25,7 @@ public class Main {
         try{
             Node.setWriter(latexPath);
         } catch (FileNotFoundException e){
-            new File(outputFolder + inputFilename).mkdir();
+            new File(outputFolder).mkdir();
             Node.setWriter(latexPath);
         }
         try{
