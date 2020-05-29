@@ -4,10 +4,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
-        sample IMAGES:
-        \includegraphics[width=.5\textwidth]{p1}
- */
 public class IMAGES extends PAGESTUFF {
     //IMAGES ::= “Image:” (IMAGEREF)*
     List<IMAGEREF> images = new ArrayList<>();
@@ -74,3 +70,8 @@ public class IMAGES extends PAGESTUFF {
         }
     }
 }
+
+/*
+        sample IMAGES:
+        \includegraphics[width=.5\textwidth]{p1}
+ */

@@ -1,5 +1,6 @@
 package ast;
 import libs.Node;
+
 public class CONTENT extends Node {
     SIZE size = null;
     COLOR color = null;

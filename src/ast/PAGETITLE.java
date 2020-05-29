@@ -1,7 +1,5 @@
 package ast;
 
-import libs.Node;
-
 public class PAGETITLE extends TITLE{
     CONTENT pagetitle;
     @Override

@@ -1,7 +1,5 @@
 package ast;
 
-import libs.Node;
-
 public class PARAGRAPH extends PAGESTUFF {
     CONTENT paragraph;
     @Override
