@@ -1,0 +1,16 @@
+Title: Introduction to CS (DataStructures, Algorithms, Proofs)
+Author: John Ama$ Bob Sama$ Hama
+
+Section: Chapter1: @(bold$ italic$ Huge$ red)@ DataStructures
+NewPage: @(bold$ italic$ Large$ red)@ Intro to Array
+BulletPoint:  Array is a list. of ……..
+BulletPoint:  Running time is  O(n).
+BulletPoint:  Space Complexity is  O(n).
+
+NewPage: Intro to LinkedList
+BulletPoint:  Array is a list. of ……..
+BulletPoint:  Running time is  O(n).
+BulletPoint:  Space Complexity is  O(n).
+
+NewPage: Array vs LinkedList
+PARAGRAPH:  @(bold$ 14$ red)@ This is a paragraphasdklasdjasdkasljdaslkjdajksdjaskldjasdlkasjdlkasjdaslkdjasldkajdlkasdjalskdja
