@@ -10,7 +10,8 @@ public class IMAGES extends PAGESTUFF {
     @Override
     public void parse() {
         tokenizer.getAndCheckNext("Image:");
-        while(tokenizer.moreTokens() && !tokenizer.checkToken("NewPage:") && !tokenizer.checkToken("Section:")){
+        while(tokenizer.moreTokens() && !tokenizer.checkToken("NewPage:")&& !tokenizer.checkToken("BulletPoint:")&&
+                !tokenizer.checkToken("Paragraph:") && !tokenizer.checkToken("Section:")){
             //tokenizer.getNext();
             IMAGEREF image = IMAGEREF.make();
             image.parse();
