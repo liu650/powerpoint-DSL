@@ -21,6 +21,7 @@ public class PAGE extends Node {
             PAGESTUFF p = PAGESTUFF.make();
             p.parse();
             pstf.add(p);
+
         }
     }
 
