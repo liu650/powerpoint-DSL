@@ -21,7 +21,32 @@
   <component name="ChangeListManager">
     <list default="true" id="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basecolors.png" beforeDir="false" afterPath="$PROJECT_DIR$/test/basecolors.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input1-empty-false.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input1-empty-false.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input10-4Imgae.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input10-4Imgae.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input11-5Image.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input11-5Image.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input12-8Image.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input12-8Image.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input13-BI-And-Italic-false.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input13-BI-And-Italic-false.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input15-ColorInvalid-u.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input15-ColorInvalid-u.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input16-ColorVlid-true.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input16-ColorVlid-true.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input17-InvalidURL.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input17-InvalidURL.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input2-Title-KeyWord-false.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input2-Title-KeyWord-false.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input3-titleWcontent.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input3-titleWcontent.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input5-wAuthorName-true.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input5-wAuthorName-true.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input6-SecWithOutTitle-false.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input6-SecWithOutTitle-false.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input7-SecWTitle-true.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input7-SecWTitle-true.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input8-NewpageWOcontent-true.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input8-NewpageWOcontent-true.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inputBasic.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/inputBasic.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inputShort.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/inputShort.thtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/CONTENT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/CONTENT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/FORMULA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestEvaluate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestParse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyHTML.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyHTML.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyHTMLsecondtry.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +98,9 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -179,7 +207,8 @@
     <MESSAGE value="Revert &quot;remove jdk version requirement in Intellij setting&quot;&#10;&#10;This reverts commit 5aeda737" />
     <MESSAGE value="resolve conflicts in the branches, fix missing import in test files" />
     <MESSAGE value="implement slides generator and its helper methods,&#10;add test files" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement slides generator and its helper methods,&#10;add test files" />
+    <MESSAGE value="merge with branch 'may28_new' and remove cache files" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge with branch 'may28_new' and remove cache files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="551" y="326" key="#Notifications" timestamp="1590511140880">
@@ -197,10 +226,10 @@
     </state>
     <state x="184" y="113" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1590483772817" />
     <state x="130" y="29" key="#com.intellij.execution.impl.EditConfigurationsDialog/55.23.1225.777@55.23.1225.777" timestamp="1590547373263" />
-    <state x="357" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590647608187">
+    <state x="357" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590733616194">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="357" y="220" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1280.777@0.23.1280.777" timestamp="1590647608187" />
+    <state x="357" y="220" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1280.777@0.23.1280.777" timestamp="1590733616194" />
     <state x="397" y="220" key="#com.intellij.fileTypes.FileTypeChooser/55.23.1225.777@55.23.1225.777" timestamp="1590546041706" />
     <state x="480" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1590516692402">
       <screen x="52" y="23" width="1228" height="777" />
@@ -237,10 +266,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="413" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1280.777@0.23.1280.777" timestamp="1590644521126" />
-    <state x="0" y="23" width="1204" height="777" key="CommitChangelistDialog2" timestamp="1590648293667">
+    <state x="0" y="23" width="1204" height="777" key="CommitChangelistDialog2" timestamp="1590733871217">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="0" y="23" width="1204" height="777" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1590648293667" />
+    <state x="0" y="23" width="1204" height="777" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1590733871217" />
     <state x="52" y="23" key="CommitChangelistDialog2/50.23.1230.777@50.23.1230.777" timestamp="1590511654173" />
     <state x="52" y="23" key="CommitChangelistDialog2/52.23.1228.777@52.23.1228.777" timestamp="1590516978896" />
     <state x="55" y="23" key="CommitChangelistDialog2/55.23.1225.777@55.23.1225.777" timestamp="1590539440944" />
@@ -252,38 +281,38 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="350" y="116" key="EnvironmentVariablesDialog/0.23.1280.777@0.23.1280.777" timestamp="1590556117773" />
-    <state width="1186" height="208" key="GridCell.Tab.0.bottom" timestamp="1590647362114">
+    <state width="1186" height="234" key="GridCell.Tab.0.bottom" timestamp="1590733720050">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590382016025" />
-    <state width="1186" height="208" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1590647362114" />
+    <state width="1186" height="234" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1590733720050" />
     <state width="1186" height="168" key="GridCell.Tab.0.bottom/50.23.1230.777@50.23.1230.777" timestamp="1590511442959" />
     <state width="1177" height="280" key="GridCell.Tab.0.bottom/52.23.1228.777@52.23.1228.777" timestamp="1590546207741" />
     <state width="1186" height="274" key="GridCell.Tab.0.bottom/55.23.1225.777@55.23.1225.777" timestamp="1590554946989" />
     <state width="1186" height="274" key="GridCell.Tab.0.bottom/61.23.1219.777@61.23.1219.777" timestamp="1590555218290" />
-    <state width="1186" height="208" key="GridCell.Tab.0.center" timestamp="1590647362113">
+    <state width="1186" height="234" key="GridCell.Tab.0.center" timestamp="1590733720050">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590382016024" />
-    <state width="1186" height="208" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1590647362113" />
+    <state width="1186" height="234" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1590733720050" />
     <state width="1186" height="168" key="GridCell.Tab.0.center/50.23.1230.777@50.23.1230.777" timestamp="1590511442959" />
     <state width="1177" height="280" key="GridCell.Tab.0.center/52.23.1228.777@52.23.1228.777" timestamp="1590546207740" />
     <state width="1186" height="274" key="GridCell.Tab.0.center/55.23.1225.777@55.23.1225.777" timestamp="1590554946987" />
     <state width="1186" height="274" key="GridCell.Tab.0.center/61.23.1219.777@61.23.1219.777" timestamp="1590555218289" />
-    <state width="1186" height="208" key="GridCell.Tab.0.left" timestamp="1590647362113">
+    <state width="1186" height="234" key="GridCell.Tab.0.left" timestamp="1590733720049">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590382016023" />
-    <state width="1186" height="208" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1590647362113" />
+    <state width="1186" height="234" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1590733720049" />
     <state width="1186" height="168" key="GridCell.Tab.0.left/50.23.1230.777@50.23.1230.777" timestamp="1590511442959" />
     <state width="1177" height="280" key="GridCell.Tab.0.left/52.23.1228.777@52.23.1228.777" timestamp="1590546207740" />
     <state width="1186" height="274" key="GridCell.Tab.0.left/55.23.1225.777@55.23.1225.777" timestamp="1590554946987" />
     <state width="1186" height="274" key="GridCell.Tab.0.left/61.23.1219.777@61.23.1219.777" timestamp="1590555218288" />
-    <state width="1186" height="208" key="GridCell.Tab.0.right" timestamp="1590647362114">
+    <state width="1186" height="234" key="GridCell.Tab.0.right" timestamp="1590733720050">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590382016025" />
-    <state width="1186" height="208" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1590647362114" />
+    <state width="1186" height="234" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1590733720050" />
     <state width="1186" height="168" key="GridCell.Tab.0.right/50.23.1230.777@50.23.1230.777" timestamp="1590511442959" />
     <state width="1177" height="280" key="GridCell.Tab.0.right/52.23.1228.777@52.23.1228.777" timestamp="1590546207740" />
     <state width="1186" height="274" key="GridCell.Tab.0.right/55.23.1225.777@55.23.1225.777" timestamp="1590554946988" />
@@ -351,10 +380,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="378" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1280.777@0.23.1280.777" timestamp="1590560983729" />
-    <state x="326" y="211" width="625" height="490" key="find.popup" timestamp="1590559923669">
+    <state x="326" y="211" width="625" height="490" key="find.popup" timestamp="1590734448587">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="326" y="211" width="625" height="490" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1590559923669" />
+    <state x="326" y="211" width="625" height="490" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1590734448587" />
     <state x="365" y="211" width="600" height="582" key="find.popup/52.23.1228.777@52.23.1228.777" timestamp="1590516654901" />
     <state x="367" y="211" width="598" height="490" key="find.popup/55.23.1225.777@55.23.1225.777" timestamp="1590545368411" />
     <state x="208" y="258" key="git4idea.ui.GitUnstashDialog" timestamp="1590635818804">
@@ -379,7 +408,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ast/PROGRAM.java</url>
-          <line>18</line>
+          <line>30</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>

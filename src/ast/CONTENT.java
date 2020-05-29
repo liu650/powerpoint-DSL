@@ -1,6 +1,4 @@
 package ast;
-import java.util.ArrayList;
-import java.util.List;
 import libs.Node;
 public class CONTENT extends Node {
     SIZE size = null;
@@ -9,23 +7,6 @@ public class CONTENT extends Node {
     String sentence = ""; // from list of sentence to single sentence
     @Override
     public void parse() {
-        //TODO
-        // Parse Content
-        // the following has been changed in the latest github version
-
-//            case "Settings:":
-//                // Parse Settings
-//                SETTINGS settings = new SETTINGS();
-//                settings.parse();
-//                content=tokenizer.getNext();
-//                break;
-//            case "Formula:":
-//                FORMULA formula = new FORMULA();
-//                formula.parse();
-//                break;
-        // TODO: debug
-        // modified grammar by adding keywords "Size: " "BI: "...
-
         if (tokenizer.checkToken("@\\(")) {
             tokenizer.getNext();
             while (tokenizer.moreTokens() && !tokenizer.checkToken("\\)@")) {
@@ -49,36 +30,12 @@ public class CONTENT extends Node {
             throw new RuntimeException("Missing document title");
         }
         System.out.println("SENTENCE IS __:    " + sentence);
-
-        /*
-        // take sentences input
-        while (tokenizer.moreTokens() && !tokenizer.checkToken("FORMULA:")){
-            // TODO: need to add termination symbol for sentences
-            SENTENCE s = new SENTENCE();
-            s.parse();
-            sentences.add(s);
-        }
-        */
     }
 
     @Override
     public void evaluate() {
-        // TODO: change this method to toString later
-        // TODO: implement a real evaluate()
-        // TODO {\it {\bf{\Large {\color{blue} Large bold italic blue } } }}\newline
-        System.out.println("process CONTENT: ");
-        /*
-        if (size != null){
-            System.out.println("process SIZE = " + size.toString());
-        } if (bi != null) {
-            System.out.println("process BI = " + bi.toString());
-        } if (color != null) {
-            System.out.println("process COLOR = " + color.toString());
-        }
-         */
-
             System.out.println("process SENTENCE: " + sentence.toString());
-            // TODO ==================================================================
+
             if (!bi.italic && !bi.bold && size == null && color == null) {
                 //0000
                 writer.print(sentence);
