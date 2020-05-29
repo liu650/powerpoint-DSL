@@ -43,16 +43,15 @@ public class Main {
             System.out.println("\nDone parsing");
             p.evaluate();
             System.out.println("\nDone evaluation\n");
+
+            //take the beamer input, and convert it to slides output
+            //any failure encounter here will throw errors
+            generatePdf(outputFolder);
+            System.out.println("Please check your output result under 'out/' folder.");
         } catch (RuntimeException e){
             System.out.println("!!!ERROR:" + e.getMessage());
         }
         Node.closeWriter();
-
-
-        //take the beamer input, and convert it to slides output
-        //any failure encounter here will throw errors
-        generatePdf(outputFolder);
-        System.out.println("Please check your output result under 'out/' folder.");
     }
 
     private static void generatePdf(String givenPath){
