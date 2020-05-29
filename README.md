@@ -64,7 +64,4 @@ FORMULA::= "Formula: " STRING  //STRETCH GOAL
 
 ## Contributors
 Feiyi Wang, Marta Yao, Pengwei Zhou, Jialu Zhang, Jialin Liu
-## Acknowledgements
-Open-source LaTex template (https://www.overleaf.com/latex/templates/a-modern-beamer-theme-mtheme/qzyvdhrntfmr#.Vjsvnt-qpBd) created by Matthias Vogelgesang
-
 
