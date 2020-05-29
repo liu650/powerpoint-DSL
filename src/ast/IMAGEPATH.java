@@ -13,7 +13,7 @@ public class IMAGEPATH extends IMAGEREF{
         address = tokenizer.getNext();
         File f = new File(address);
         if (!f.exists()){
-            throw new FileNotFoundException("The image path " + address + "is invalid." );
+            throw new FileNotFoundException("The image path " + address + " is invalid." );
         }
     }
 

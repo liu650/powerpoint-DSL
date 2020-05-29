@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static String outputFolder = "out/";
     public static String testFolder = "test/";
-    public static String inputFile = testFolder + "wrong_image_path.thtml";
+    public static String inputFile = testFolder + "image_path.thtml";
 
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
         List<String> literals = Arrays.asList("Title:", "Author:", "Section:", "NewPage:", "BulletPoint:", "Paragraph:",
@@ -28,13 +28,18 @@ public class Main {
             new File(outputFolder + inputFilename).mkdir();
             Node.setWriter(latexPath);
         }
-        PROGRAM p = new PROGRAM();
-        System.out.println("\nDone tokenizing");
-        p.parse();
-        System.out.println("\nDone parsing");
-        p.evaluate();
-        System.out.println("\nDone evaluation\n");
+        try{
+            PROGRAM p = new PROGRAM();
+            System.out.println("\nDone tokenizing");
+            p.parse();
+            System.out.println("\nDone parsing");
+            p.evaluate();
+            System.out.println("\nDone evaluation\n");
+        } catch (RuntimeException e){
+            System.out.println("!!!ERROR:" + e.getMessage());
+        }
         Node.closeWriter();
+
 
         //take the beamer input, and convert it to slides output
         //any failure encounter here will throw errors
@@ -132,6 +137,7 @@ public class Main {
                 System.out.println("The program is forced to quit.");
                 // e.printStackTrace();
             }
+            Runtime.getRuntime().exit(0);
         }
     }
 
@@ -140,7 +146,9 @@ public class Main {
         String fileName = p.substring(0, p.lastIndexOf("."));
         String[] logFiles = {".aux", ".log", ".nav", ".out", ".snm", ".toc"};
         for (String log: logFiles){
-            Runtime.getRuntime().exec("rm " + fileName + log);
+            if (new File(fileName + log).exists()) {
+                Runtime.getRuntime().exec("rm " + fileName + log);
+            }
         }
     }
 }

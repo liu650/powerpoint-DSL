@@ -21,7 +21,7 @@ public class Tokenizer {
         try {
             rawInput = Files.readString(Paths.get(filename));
         } catch (IOException e) {
-            System.out.println("Didn't find file");
+            System.out.println("!!!ERROR: Input file not found.");
             System.exit(0);
         }
         tokenize();
@@ -29,20 +29,16 @@ public class Tokenizer {
 
 
      private void tokenize (){
-
-        System.out.println(rawInput);
         String newInput = rawInput;
 
         // Replace all constant literals with  reserved + s + reserved;
         for(String s : literals) {
             newInput = newInput.replace(s, reserved + s + reserved);
-            System.out.println(newInput);
         }
 
         // Remove multiple reserved
         newInput = newInput.replace("```",reserved);
         newInput = newInput.replace("``", reserved);
-        System.out.println(newInput);
 
         // Remove leading RESERVEDWORD
         if(newInput.charAt(0) == reserved.charAt(0) && !newInput.isEmpty()) {
@@ -51,19 +47,16 @@ public class Tokenizer {
 
         // Split the rest
         String[] tempArray = newInput.split(reserved);
-        System.out.println(Arrays.asList(tempArray));
-
 
         // Trim whitespace and remove empty tokens
         for (String s:tempArray){
-            System.out.println(s);
             if(!s.trim().isEmpty()){
                tokens.add(s.trim());
             }
         }
 
-        System.out.println("!!!!!!!!!!!!!!!!!!");
-        System.out.println(Arrays.asList(tempArray));
+        // System.out.println("Input file: ");
+        // System.out.println(Arrays.asList(tempArray));
     }
 
 
