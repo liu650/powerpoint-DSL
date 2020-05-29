@@ -25,6 +25,7 @@ public class CONTENT extends Node {
 //                break;
         // TODO: debug
         // modified grammar by adding keywords "Size: " "BI: "...
+
         if (tokenizer.checkToken("@\\(")) {
             tokenizer.getNext();
             while (tokenizer.moreTokens() && !tokenizer.checkToken("\\)@")) {
@@ -44,6 +45,9 @@ public class CONTENT extends Node {
             tokenizer.getAndCheckNext("\\)@");
         }
         sentence = tokenizer.getNext();
+        if (sentence == "NULLTOKEN") {
+            throw new RuntimeException("Missing document title");
+        }
         System.out.println("SENTENCE IS __:    " + sentence);
 
         /*
@@ -77,68 +81,71 @@ public class CONTENT extends Node {
             // TODO ==================================================================
             if (!bi.italic && !bi.bold && size == null && color == null) {
                 //0000
-                writer.println(sentence);
+                writer.print(sentence);
             }
             if (!bi.italic && !bi.bold && size == null && color != null) {
                 // 0001
-                writer.println("{\\color{" + color.color + "}" + sentence + "}");
+                writer.print("{\\color{" + color.color + "}" + sentence + "}");
             }
             if (!bi.italic && !bi.bold && size != null && color == null) {
                 //0010
-                writer.println("{" + size.size + " " + sentence + "}");
+
+                writer.print("{\\" + size.size + " " + sentence + "}");
             }
             if (!bi.italic && !bi.bold && size != null && color != null) {
                 // 0011
-                writer.println("{" + size.size + "{\\color{" + color.color + "}" + sentence + "}}" );
+                writer.print("{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}" );
+
             }
             if (!bi.italic && bi.bold && size == null && color == null) {
                 //0100
-                writer.println("{\\bf "  + sentence + "}");
+                writer.print("{\\bf "  + sentence + "}");
             }
             if (!bi.italic && bi.bold && size == null && color != null) {
                 //0101
                 // TODO {\it {\bf{\Large {\color{blue} Large bold italic blue } } }}\newline
-                writer.println("{\\bf{\\color{" +color.color +"}" + sentence + "}}" );
+                writer.print("{\\bf{\\color{" +color.color +"}" + sentence + "}}" );
             }
             if (!bi.italic && bi.bold && size != null && color == null) {
                 //0110
-                writer.println("{\\bf{" + size.size + " " + sentence + "}}");
+                writer.print("{\\bf{\\" + size.size + " " + sentence + "}}");
             }
             if (!bi.italic && bi.bold && size != null && color != null) {
                 // 0111
-                writer.println("{\\bf{" + size.size + "{\\color{" + color.color + "}" + sentence + "}}}");
+                writer.print("{\\bf{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}}");
             }
             if (bi.italic && !bi.bold && size == null && color == null) {
                 // 1000
-                writer.println("{\\it " + sentence + "}");
+                writer.print("{\\it " + sentence + "}");
             }
             if (bi.italic && !bi.bold && size == null && color != null) {
                 // 1001
-                writer.println("{\\it{\\color{" + color.color + "}" +sentence + "}}" );
+                writer.print("{\\it{\\color{" + color.color + "}" +sentence + "}}" );
             }
             if (bi.italic && !bi.bold && size != null && color == null) {
                 // 1010
-                writer.println("{\\it{\\" + size.size + " " + sentence + "}}");
+                writer.print("{\\it{\\" + size.size + " " + sentence + "}}");
             }
             if (bi.italic && !bi.bold && size != null && color != null) {
                 // 1011
-                writer.println("{\\it{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}}");
+                writer.print("{\\it{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}}");
             }
             if (bi.italic && bi.bold && size == null && color == null) {
                 // 1100
-                writer.println("{\\it{\\bf " + sentence + "}}");
+                writer.print("{\\it{\\bf " + sentence + "}}");
             }
             if (bi.italic && bi.bold && size == null && color != null) {
                 // 1101
-                writer.println("{\\it{\\bf{\\color{" + color.color + "}" + sentence + "}}}");
+                writer.print("{\\it{\\bf{\\color{" + color.color + "}" + sentence + "}}}");
             }
             if (bi.italic && bi.bold && size != null && color == null) {
                 // 1110
-                writer.println("{\\it{\\bf{" + size.size + " " + sentence + "}}}");
+
+                writer.print("{\\it{\\bf{\\" + size.size + " " + sentence + "}}}");
             }
             if (bi.italic && bi.bold && size != null && color != null) {
                 // 1111
-                writer.println("{\\it{\\bf{" + size.size + "{\\color{" + color.color +"}" + sentence + "}}}}");
+                writer.print("{\\it{\\bf{\\" + size.size + "{\\color{" + color.color +"}" + sentence + "}}}}");
             }
     }
 }

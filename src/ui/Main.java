@@ -11,9 +11,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-        List<String> literals = Arrays.asList("Title:","Author:","Section:","NewPage:","BulletPoint:","Paragraph:","Image:","Url:","Path:"
-                ,"@(", ")@", "Formula:", "Color:", "Size:", "Bi:");
+        List<String> literals = Arrays.asList("Title:","Author:","Section:","NewPage:","BulletPoint:","Paragraph:","Image:","Url:","Path:","@(", ")@", "Formula:", "Color:", "Size:", "Bi:");
         Tokenizer.makeTokenizer("inputBasic.thtml",literals);
+
         Node.setWriter("output.html");
         PROGRAM p = new PROGRAM();
         System.out.println("Done tokenizing");

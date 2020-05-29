@@ -10,22 +10,22 @@ public class SIZE extends Node {
         tokenizer.getAndCheckNext("Size:");
         switch (tokenizer.getNext()) {
             case "small":
-                size = "\\tiny";
+                size = "tiny";
                 break;
             case "normal":
-                size = "\\normalsize";
+                size = "normalsize";
                 break;
             case "big":
-                size = "\\Large";
+                size = "Large";
                 break;
             case "large":
-                size = "\\LARGE";
+                size = "LARGE";
                 break;
             case "huge":
-                size = "\\Huge";
+                size = "Huge";
                 break;
             default:
-                throw new RuntimeException("Unexpected token!");
+                throw new RuntimeException("Unexpected size token!");
         }
     }
 

@@ -2,9 +2,9 @@
 
 ## Motivation
 
-###Target User  
+### Target User
 People who don't want to waste their time adjusting details in PowerPoint/ debugging Latex code.   
-###Effect   
+### Effect
 Make some neat presentation slides without dealing with annoying details (parameters, debudding)
 ## Features
 1. Plain text input 
@@ -27,14 +27,14 @@ PAGESTUFF::= POINT | PARAGRAPH | IMAGE \
 POINT::= "BulletPoint: " CONTENT \
 PARAGRAPH ::= “Paragraph”: CONTENT \
 IMAGE ::= “Image:” IMAGEREF \
-IMAGEREF::= URL|PATH \
-URL::= "Url:" STRING \
+IMAGEREF::= URL\
+URL::= "Url:" STRING  //STRETCH GOAL \
 PATH::= "Path: " STRING \
-CONTENT::= (( “@(” (SIZE | BI | COLOR)+  “)” )?  SENTENCE)+       //EXAMPLE : @(bold, RED) Hello ADAD \
+CONTENT::= ( “@(” (SIZE | BI | COLOR)+  “)” )?  SENTENCE       //EXAMPLE : @(Size:bold Color:RED) Hello World \
 SENTENCE::= STRING \
  \
-SIZE::= "Size: " "“Small” or “Normal” or "Big" or "Large" or "Huge” \
-BI:: = "BI: " "Bold" or "Italic” \
+SIZE::= "Size: " "“small” or “normal” or "big" or "large" or "huge” \
+BI:: = "Bi: " "bold" or "italic” \
 COLOR:: = "Color: ""red" or "green" ... \
 
 FORMULA::= "Formula: " STRING  //STRETCH GOAL
@@ -46,7 +46,9 @@ FORMULA::= "Formula: " STRING  //STRETCH GOAL
 3. Available font sizes: small, normal, big, large, huge
 4. Available font styles: bold, italic
 5. Animations are not supported
-6. Automatic image size fit is not supported.
+6. Automatic image size fit is not supported. 
+7. More than 4 images in a single page is not allowed.
+8. Title of section cannot be bold and italic at the same time. 
 
 ## Contributors
 Feiyi Wang, Marta Yao, Pengwei Zhou, Jialu Zhang, Jialin Liu
