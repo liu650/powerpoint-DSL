@@ -33,21 +33,21 @@ Make some neat presentation slides without dealing with annoying details (parame
 PROGRAM::= TITLE (AUTHOR)? (SECTION)* \
 TITLE::="Title: " CONTENT \
 AUTHOR::= "Author: " CONTENT \
-SECTION: "Section: " TITLE (PAGE)* \
-PAGE::= "NewPage: " TITLE PAGESTUFF* \
+SECTION: "Section: " CONTENT (PAGE)+ \
+PAGE::= "NewPage: " CONTENT (PAGESTUFF)* \
 PAGESTUFF::= POINT | PARAGRAPH | IMAGE \
 POINT::= "BulletPoint: " CONTENT \
-PARAGRAPH ::= “Paragraph”: CONTENT \
+PARAGRAPH ::= "Paragraph:" CONTENT \
 IMAGE ::= “Image:” (IMAGEREF)+ \
 IMAGEREF::= URL|PATH\
-URL::= "Url:" STRING  //STRETCH GOAL \
+URL::= "Url:" STRING  // STRETCH GOAL \
 PATH::= "Path: " STRING \
-CONTENT::= ( “@(” (SIZE | BI | COLOR)+  “)” )?  SENTENCE       //EXAMPLE : @(Size:bold Color:RED) Hello World \
+CONTENT::= ( "@(" (SIZE | BI | COLOR)+  ")@" )?  SENTENCE       //EXAMPLE : @(Size:bold Color:RED)@ Hello World \
 SENTENCE::= STRING \
  \
-SIZE::= "Size: " "“small” or “normal” or "big" or "large" or "huge” \
-BI:: = "Bi: " "bold" or "italic” \
-COLOR:: = "Color: ""red" or "green" ... \
+SIZE::= "Size:" "“small” | “normal” | "big" | "large" |"huge” \
+BI:: = "Bi:" "bold" | "italic” \
+COLOR:: = "Color:" STRING //eg: "red", "green", "blue" \
 
 FORMULA::= "Formula: " STRING  //STRETCH GOAL
 
