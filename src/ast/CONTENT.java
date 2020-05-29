@@ -85,11 +85,11 @@ public class CONTENT extends Node {
             }
             if (!bi.italic && !bi.bold && size != null && color == null) {
                 //0010
-                writer.println("{\\" + size.size + " " + sentence + "}");
+                writer.println("{" + size.size + " " + sentence + "}");
             }
             if (!bi.italic && !bi.bold && size != null && color != null) {
                 // 0011
-                writer.println("{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}" );
+                writer.println("{" + size.size + "{\\color{" + color.color + "}" + sentence + "}}" );
             }
             if (!bi.italic && bi.bold && size == null && color == null) {
                 //0100
@@ -102,11 +102,11 @@ public class CONTENT extends Node {
             }
             if (!bi.italic && bi.bold && size != null && color == null) {
                 //0110
-                writer.println("{\\bf{\\" + size.size + " " + sentence + "}}");
+                writer.println("{\\bf{" + size.size + " " + sentence + "}}");
             }
             if (!bi.italic && bi.bold && size != null && color != null) {
                 // 0111
-                writer.println("{\\bf{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}}");
+                writer.println("{\\bf{" + size.size + "{\\color{" + color.color + "}" + sentence + "}}}");
             }
             if (bi.italic && !bi.bold && size == null && color == null) {
                 // 1000
@@ -134,11 +134,11 @@ public class CONTENT extends Node {
             }
             if (bi.italic && bi.bold && size != null && color == null) {
                 // 1110
-                writer.println("{\\it{\\bf{\\" + size.size + " " + sentence + "}}}");
+                writer.println("{\\it{\\bf{" + size.size + " " + sentence + "}}}");
             }
             if (bi.italic && bi.bold && size != null && color != null) {
                 // 1111
-                writer.println("{\\it{\\bf{\\" + size.size + "{\\color{" + color.color +"}" + sentence + "}}}}");
+                writer.println("{\\it{\\bf{" + size.size + "{\\color{" + color.color +"}" + sentence + "}}}}");
             }
     }
 }
