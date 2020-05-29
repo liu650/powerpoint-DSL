@@ -14,8 +14,8 @@ public class COLOR extends Node {
         tokenizer.getAndCheckNext("Color:");
         // Parse Color
         color = tokenizer.getNext().toLowerCase();
-        System.out.println(color + " wait " );
-        System.out.println(color == "blue");
+        // System.out.println(color + " wait " );
+        // System.out.println(color == "blue");
         colorSet.add("black");
         colorSet.add("darkgray");
         colorSet.add("brown");
@@ -38,8 +38,6 @@ public class COLOR extends Node {
         if (!colorSet.contains(color)) {
             throw new RuntimeException("Color " + color + " not supported.");
         }
-        // TODO let the user know if the current color is not supported.
-        // throw exception? illegal input
     }
 
     @Override

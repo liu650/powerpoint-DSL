@@ -153,7 +153,7 @@ public class Main {
     // remove all the log files if the pdf is created successfully.
     private static void cleanUpPdfLog(String p) throws IOException {
         String fileName = p.substring(0, p.lastIndexOf("."));
-        String[] logFiles = {".aux", ".log", ".nav", ".out", ".snm", ".toc"};
+        String[] logFiles = {".aux", ".log", ".nav", ".out", ".snm", ".toc", ".tex"};
         for (String log: logFiles){
             if (new File(fileName + log).exists()) {
                 Runtime.getRuntime().exec("rm " + fileName + log);
