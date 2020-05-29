@@ -44,14 +44,18 @@ public class Main {
             p.evaluate();
             System.out.println("\nDone evaluation\n");
 
+            Node.closeWriter();
+
             //take the beamer input, and convert it to slides output
             //any failure encounter here will throw errors
             generatePdf(outputFolder);
             System.out.println("Please check your output result under 'out/' folder.");
+
         } catch (RuntimeException e){
+            Node.closeWriter();
             System.out.println("!!!ERROR:" + e.getMessage());
         }
-        Node.closeWriter();
+
     }
 
     private static void generatePdf(String givenPath){
@@ -127,7 +131,7 @@ public class Main {
                 }
 
                 // kill the process if it takes over than 1 min
-                boolean exitVal = process.waitFor(30, TimeUnit.SECONDS);
+                boolean exitVal = process.waitFor(1, TimeUnit.SECONDS);
 
                 if (exitVal) {
                     System.out.println("Success!");
