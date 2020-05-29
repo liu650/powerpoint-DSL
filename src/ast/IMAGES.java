@@ -1,5 +1,6 @@
 package ast;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,12 +16,15 @@ public class IMAGES extends PAGESTUFF {
     public void parse() {
         tokenizer.getAndCheckNext("Image:");
 
-        while(tokenizer.moreTokens() && !tokenizer.checkToken("NewPage:")&& !tokenizer.checkToken("BulletPoint:")&&
+        while(tokenizer.moreTokens() && !tokenizer.checkToken("NewPage:") && !tokenizer.checkToken("BulletPoint:")&&
                 !tokenizer.checkToken("Paragraph:") && !tokenizer.checkToken("Section:")){
             //tokenizer.getNext();
             IMAGEREF image = IMAGEREF.make();
-            image.parse();
-
+            try {
+                image.parse();
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e.getMessage());
+            }
             images.add(image);
         }
         if (images.size()>4) {

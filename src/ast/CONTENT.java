@@ -29,7 +29,7 @@ public class CONTENT extends Node {
         if (sentence == "NULLTOKEN") {
             throw new RuntimeException("Missing document title");
         }
-        System.out.println("SENTENCE IS __:    " + sentence);
+        // System.out.println("SENTENCE IS __:    " + sentence);
     }
 
     @Override

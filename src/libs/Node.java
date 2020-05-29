@@ -17,7 +17,7 @@ public abstract class Node {
 
     }
 
-    abstract public void parse();
+    abstract public void parse() throws FileNotFoundException;
     abstract public void evaluate();
 
 
