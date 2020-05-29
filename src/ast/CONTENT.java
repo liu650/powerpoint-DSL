@@ -46,11 +46,13 @@ public class CONTENT extends Node {
             }
             if (!bi.italic && !bi.bold && size != null && color == null) {
                 //0010
+
                 writer.print("{\\" + size.size + " " + sentence + "}");
             }
             if (!bi.italic && !bi.bold && size != null && color != null) {
                 // 0011
                 writer.print("{\\" + size.size + "{\\color{" + color.color + "}" + sentence + "}}" );
+
             }
             if (!bi.italic && bi.bold && size == null && color == null) {
                 //0100
@@ -95,6 +97,7 @@ public class CONTENT extends Node {
             }
             if (bi.italic && bi.bold && size != null && color == null) {
                 // 1110
+
                 writer.print("{\\it{\\bf{\\" + size.size + " " + sentence + "}}}");
             }
             if (bi.italic && bi.bold && size != null && color != null) {

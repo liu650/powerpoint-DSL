@@ -2,9 +2,9 @@
 
 ## Motivation
 
-###Target User  
+### Target User
 People who don't want to waste their time adjusting details in PowerPoint/ debugging Latex code.   
-###Effect   
+### Effect
 Make some neat presentation slides without dealing with annoying details (parameters, debudding)
 ## Features
 1. Plain text input 
@@ -38,15 +38,15 @@ PAGE::= "NewPage: " TITLE PAGESTUFF* \
 PAGESTUFF::= POINT | PARAGRAPH | IMAGE \
 POINT::= "BulletPoint: " CONTENT \
 PARAGRAPH ::= “Paragraph”: CONTENT \
-IMAGE ::= “Image:” IMAGEREF \
-IMAGEREF::= URL\
-URL::= "Url:" STRING \
+IMAGE ::= “Image:” (IMAGEREF)+ \
+IMAGEREF::= URL|PATH\
+URL::= "Url:" STRING  //STRETCH GOAL \
 PATH::= "Path: " STRING \
-CONTENT::= (( “@(” (SIZE | BI | COLOR)+  “)” )?  SENTENCE)+       //EXAMPLE : @(bold, RED) Hello ADAD \
+CONTENT::= ( “@(” (SIZE | BI | COLOR)+  “)” )?  SENTENCE       //EXAMPLE : @(Size:bold Color:RED) Hello World \
 SENTENCE::= STRING \
  \
-SIZE::= "Size: " "“Small” or “Normal” or "Big" or "Large" or "Huge” \
-BI:: = "BI: " "Bold" or "Italic” \
+SIZE::= "Size: " "“small” or “normal” or "big" or "large" or "huge” \
+BI:: = "Bi: " "bold" or "italic” \
 COLOR:: = "Color: ""red" or "green" ... \
 
 FORMULA::= "Formula: " STRING  //STRETCH GOAL

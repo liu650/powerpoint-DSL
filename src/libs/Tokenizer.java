@@ -1,26 +1,25 @@
 package libs;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Tokenizer {
 
-
-    private static String program;
+    private String reserved = "`";
+    private static String rawInput;
     private static List<String> literals;
-    private String[] tokens;
-    private int currentToken = 0;
+    private List<String> tokens = new ArrayList<>();
+    private int index = 0;
     private static Tokenizer theTokenizer;
 
     private Tokenizer(String filename, List<String> literalsList){
         literals = literalsList;
         try {
-            program = Files.readString(Paths.get(filename));
+            rawInput = Files.readString(Paths.get(filename));
         } catch (IOException e) {
             System.out.println("Didn't find file");
             System.exit(0);
@@ -28,36 +27,43 @@ public class Tokenizer {
         tokenize();
     }
 
-    //modifies: this.tokens
-    //effects: will result in a list of tokens (sitting at this.tokens) that has no spaces around tokens.
-    private void tokenize (){
-        //0. Pick some RESERVEDWORD (string which never occurs in your input) : we'll use _
-        //1. Read the whole program into a single string; kill the newlines
-        String tokenizedProgram = program.replace("\n", "_");
-        System.out.println(tokenizedProgram);
-        //2. Replace all constant literals with “RESERVEDWORD”<the literal>“RESERVEDWORD”
+
+     private void tokenize (){
+
+        System.out.println(rawInput);
+        String newInput = rawInput;
+
+        // Replace all constant literals with  reserved + s + reserved;
         for(String s : literals) {
-            tokenizedProgram = tokenizedProgram.replace(s, "_" + s + "_");
-            System.out.println(tokenizedProgram);
-        }
-        //3. Replace all “RESERVEDWORDRESERVEDWORD” with just “RESERVEDWORD”
-        tokenizedProgram = tokenizedProgram.replace("__","_");
-        System.out.println(tokenizedProgram);
-        //4. Remove leading “_” character, then split on “_”
-        if (tokenizedProgram.length() > 0 && tokenizedProgram.charAt(0) == '_') {
-            tokenizedProgram = tokenizedProgram.substring(1); // without first character
-        }
-        tokens = tokenizedProgram.split("_");
-        System.out.println(Arrays.asList(tokens));
-        //5. Trim whitespace around tokens (unless you want it)
-        for (int i = 0; i < tokens.length; i++) {
-            tokens[i] = tokens[i].trim();
+            newInput = newInput.replace(s, reserved + s + reserved);
+            System.out.println(newInput);
         }
 
-        //6. Remove all empty tokens
-        tokens = Arrays.stream(tokens).filter(s -> !s.isEmpty()).toArray(String[]::new);
+        // Remove multiple reserved
+        newInput = newInput.replace("```",reserved);
+        newInput = newInput.replace("``", reserved);
+        System.out.println(newInput);
+
+        // Remove leading RESERVEDWORD
+        if(newInput.charAt(0) == reserved.charAt(0) && !newInput.isEmpty()) {
+            newInput = newInput.substring(1);
+        }
+
+        // Split the rest
+        String[] tempArray = newInput.split(reserved);
+        System.out.println(Arrays.asList(tempArray));
+
+
+        // Trim whitespace and remove empty tokens
+        for (String s:tempArray){
+            System.out.println(s);
+            if(!s.trim().isEmpty()){
+               tokens.add(s.trim());
+            }
+        }
+
         System.out.println("!!!!!!!!!!!!!!!!!!");
-        System.out.println(Arrays.asList(tokens));
+        System.out.println(Arrays.asList(tempArray));
     }
 
 
@@ -85,31 +91,26 @@ public class Tokenizer {
 
 
     private String checkNext(){
-        String token="";
-        if (currentToken<tokens.length){
-            token = tokens[currentToken];
+        String result="NO_MORE_TOKENS";
+        if (moreTokens()){
+            result = tokens.get(index);
         }
-        else
-            token="NO_MORE_TOKENS";
-        return token;
+        return result;
     }
 
     public String getNext(){
-        String token="";
-        if (currentToken<tokens.length){
-            token = tokens[currentToken];
-            currentToken++;
+        String result = "NULLTOKEN";
+        if (moreTokens()){
+            result = tokens.get(index);
+            index++;
         }
-        else
-            token="NULLTOKEN";
-        return token;
+        return result;
     }
 
 
     public boolean checkToken(String regexp){
         String s = checkNext();
         System.out.println("comparing: |"+s+"|  to  |"+regexp+"|");
-        System.out.println(s.matches(regexp));
         return (s.matches(regexp));
     }
 
@@ -117,14 +118,14 @@ public class Tokenizer {
     public String getAndCheckNext(String regexp){
         String s = getNext();
         if (!s.matches(regexp)) {
-            throw new RuntimeException("Unexpected next token for Parsing! Expected something matching: " + regexp + " but got: " + s);
+            throw new Error("Syntax Error: Expected something matching: " + regexp + " but got: " + s);
         }
         System.out.println("matched: "+s+"  to  "+regexp);
         return s;
     }
 
     public boolean moreTokens(){
-        return currentToken<tokens.length;
+        return index <tokens.size();
     }
 
     public static void makeTokenizer(String filename, List<String> literals){
