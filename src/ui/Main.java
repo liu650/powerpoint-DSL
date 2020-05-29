@@ -13,11 +13,11 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static String outputFolder = "out/";
     public static String testFolder = "test/";
+    public static String inputFile = testFolder + "wrong_image_path.thtml";
 
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
         List<String> literals = Arrays.asList("Title:", "Author:", "Section:", "NewPage:", "BulletPoint:", "Paragraph:",
                 "Image:", "Url:", "Path:", "@(", ")@", "Formula:", "$", "Color:", "Size:", "Bi:");
-        String inputFile = testFolder + "input_slide.thtml";
         String inputFilename = inputFile.substring(inputFile.lastIndexOf("/") + 1, inputFile.lastIndexOf("."));
         String latexPath = outputFolder + inputFilename + ".tex";
 
@@ -114,7 +114,7 @@ public class Main {
                 }
 
                 // kill the process if it takes over than 1 min
-                boolean exitVal = process.waitFor(1, TimeUnit.MINUTES);
+                boolean exitVal = process.waitFor(30, TimeUnit.SECONDS);
 
                 if (exitVal) {
                     System.out.println("Success!");

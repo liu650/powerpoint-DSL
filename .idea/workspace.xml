@@ -19,22 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" name="Default Changelist" comment="Remove all pdfLatex log once the pdf is successfully generated.&#10;fix some integration issues on path">
+    <list default="true" id="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" name="Default Changelist" comment="fix wrong image path due to move of image location&#10;throw error if img path not found&#10;simplify pdf output folder structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/input_slide/input_slide.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test_input/test_input.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test_input2/test_input2.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/CONTENT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/CONTENT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/IMAGEPATH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/IMAGEPATH.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/IMAGEREF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/IMAGEREF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/IMAGES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/IMAGES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/IMAGEURL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/Tokenizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/input10-oneImgae.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input10-oneImgae.thtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/input11-2Image.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input11-2Image.thtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/input12-8Image.thtml" beforeDir="false" afterPath="$PROJECT_DIR$/test/input12-8Image.thtml" afterDir="false" />
     </list>
     <list id="e4291cef-3b72-43d1-9995-578e629c2faa" name="half way to detect image path before process it" comment="">
       <change afterPath="$PROJECT_DIR$/test/wrong_image_path.thtml" afterDir="false" />
@@ -59,25 +45,6 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/ui/Main.java">
-      <ranges>
-        <range start1="15" end1="15" start2="15" end2="16" changelist="e4291cef-3b72-43d1-9995-578e629c2faa" />
-        <range start1="19" end1="20" start2="20" end2="20" changelist="e4291cef-3b72-43d1-9995-578e629c2faa" />
-        <range start1="21" end1="22" start2="21" end2="22" changelist="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" />
-        <range start1="25" end1="26" start2="25" end2="26" changelist="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" />
-        <range start1="28" end1="29" start2="28" end2="29" changelist="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" />
-        <range start1="35" end1="36" start2="35" end2="36" changelist="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" />
-        <range start1="40" end1="41" start2="40" end2="41" changelist="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" />
-        <range start1="43" end1="45" start2="43" end2="45" changelist="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" />
-        <range start1="57" end1="58" start2="57" end2="59" changelist="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" />
-        <range start1="59" end1="60" start2="60" end2="61" changelist="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" />
-        <range start1="61" end1="70" start2="62" end2="75" changelist="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" />
-        <range start1="71" end1="71" start2="76" end2="77" changelist="f41402f0-08b5-4ec9-b227-d43c37c6d8c8" />
-        <range start1="110" end1="111" start2="116" end2="117" changelist="e4291cef-3b72-43d1-9995-578e629c2faa" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1cLNT6Gg9wznUsQU9L6E00Z1fdf" />
   <component name="ProjectLevelVcsManager">
@@ -234,7 +201,8 @@
     <MESSAGE value="merge with branch 'may28_new' and remove cache files" />
     <MESSAGE value="remove useless files and comments, move all test files into a single folder" />
     <MESSAGE value="Remove all pdfLatex log once the pdf is successfully generated.&#10;fix some integration issues on path" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove all pdfLatex log once the pdf is successfully generated.&#10;fix some integration issues on path" />
+    <MESSAGE value="fix wrong image path due to move of image location&#10;throw error if img path not found&#10;simplify pdf output folder structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix wrong image path due to move of image location&#10;throw error if img path not found&#10;simplify pdf output folder structure" />
   </component>
   <component name="WindowStateProjectService">
     <state x="551" y="326" key="#Notifications" timestamp="1590511140880">
@@ -296,13 +264,13 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="413" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1280.777@0.23.1280.777" timestamp="1590644521126" />
-    <state x="0" y="23" width="1204" height="777" key="CommitChangelistDialog2" timestamp="1590750512287">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="55" y="23" width="1204" height="777" key="CommitChangelistDialog2" timestamp="1590751092195">
+      <screen x="55" y="23" width="1225" height="777" />
     </state>
     <state x="0" y="23" width="1204" height="777" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1590750512287" />
     <state x="52" y="23" key="CommitChangelistDialog2/50.23.1230.777@50.23.1230.777" timestamp="1590511654173" />
     <state x="52" y="23" key="CommitChangelistDialog2/52.23.1228.777@52.23.1228.777" timestamp="1590516978896" />
-    <state x="55" y="23" key="CommitChangelistDialog2/55.23.1225.777@55.23.1225.777" timestamp="1590539440944" />
+    <state x="55" y="23" key="CommitChangelistDialog2/55.23.1225.777@55.23.1225.777" timestamp="1590751092195" />
     <state x="90" y="90" key="DiffContextDialog" timestamp="1590559916354">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -311,41 +279,41 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="350" y="116" key="EnvironmentVariablesDialog/0.23.1280.777@0.23.1280.777" timestamp="1590556117773" />
-    <state width="1186" height="234" key="GridCell.Tab.0.bottom" timestamp="1590750681794">
+    <state width="1186" height="234" key="GridCell.Tab.0.bottom" timestamp="1590751043087">
       <screen x="55" y="23" width="1225" height="777" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590382016025" />
     <state width="1186" height="234" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1590750471683" />
     <state width="1186" height="168" key="GridCell.Tab.0.bottom/50.23.1230.777@50.23.1230.777" timestamp="1590511442959" />
     <state width="1177" height="280" key="GridCell.Tab.0.bottom/52.23.1228.777@52.23.1228.777" timestamp="1590546207741" />
-    <state width="1186" height="234" key="GridCell.Tab.0.bottom/55.23.1225.777@55.23.1225.777" timestamp="1590750681794" />
+    <state width="1186" height="234" key="GridCell.Tab.0.bottom/55.23.1225.777@55.23.1225.777" timestamp="1590751043087" />
     <state width="1186" height="274" key="GridCell.Tab.0.bottom/61.23.1219.777@61.23.1219.777" timestamp="1590555218290" />
-    <state width="1186" height="234" key="GridCell.Tab.0.center" timestamp="1590750681791">
+    <state width="1186" height="234" key="GridCell.Tab.0.center" timestamp="1590751043082">
       <screen x="55" y="23" width="1225" height="777" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590382016024" />
     <state width="1186" height="234" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1590750471681" />
     <state width="1186" height="168" key="GridCell.Tab.0.center/50.23.1230.777@50.23.1230.777" timestamp="1590511442959" />
     <state width="1177" height="280" key="GridCell.Tab.0.center/52.23.1228.777@52.23.1228.777" timestamp="1590546207740" />
-    <state width="1186" height="234" key="GridCell.Tab.0.center/55.23.1225.777@55.23.1225.777" timestamp="1590750681791" />
+    <state width="1186" height="234" key="GridCell.Tab.0.center/55.23.1225.777@55.23.1225.777" timestamp="1590751043082" />
     <state width="1186" height="274" key="GridCell.Tab.0.center/61.23.1219.777@61.23.1219.777" timestamp="1590555218289" />
-    <state width="1186" height="234" key="GridCell.Tab.0.left" timestamp="1590750681790">
+    <state width="1186" height="234" key="GridCell.Tab.0.left" timestamp="1590751043073">
       <screen x="55" y="23" width="1225" height="777" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590382016023" />
     <state width="1186" height="234" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1590750471679" />
     <state width="1186" height="168" key="GridCell.Tab.0.left/50.23.1230.777@50.23.1230.777" timestamp="1590511442959" />
     <state width="1177" height="280" key="GridCell.Tab.0.left/52.23.1228.777@52.23.1228.777" timestamp="1590546207740" />
-    <state width="1186" height="234" key="GridCell.Tab.0.left/55.23.1225.777@55.23.1225.777" timestamp="1590750681790" />
+    <state width="1186" height="234" key="GridCell.Tab.0.left/55.23.1225.777@55.23.1225.777" timestamp="1590751043073" />
     <state width="1186" height="274" key="GridCell.Tab.0.left/61.23.1219.777@61.23.1219.777" timestamp="1590555218288" />
-    <state width="1186" height="234" key="GridCell.Tab.0.right" timestamp="1590750681792">
+    <state width="1186" height="234" key="GridCell.Tab.0.right" timestamp="1590751043083">
       <screen x="55" y="23" width="1225" height="777" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590382016025" />
     <state width="1186" height="234" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1590750471682" />
     <state width="1186" height="168" key="GridCell.Tab.0.right/50.23.1230.777@50.23.1230.777" timestamp="1590511442959" />
     <state width="1177" height="280" key="GridCell.Tab.0.right/52.23.1228.777@52.23.1228.777" timestamp="1590546207740" />
-    <state width="1186" height="234" key="GridCell.Tab.0.right/55.23.1225.777@55.23.1225.777" timestamp="1590750681792" />
+    <state width="1186" height="234" key="GridCell.Tab.0.right/55.23.1225.777@55.23.1225.777" timestamp="1590751043083" />
     <state width="1186" height="274" key="GridCell.Tab.0.right/61.23.1219.777@61.23.1219.777" timestamp="1590555218290" />
     <state width="1186" height="232" key="GridCell.Tab.1.bottom" timestamp="1590750112716">
       <screen x="0" y="23" width="1280" height="777" />
