@@ -1,1 +1,1 @@
-keep this dir in the workspace for caching purpose
+this file is to keep the functionality of outputCache

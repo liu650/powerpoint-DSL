@@ -8,19 +8,27 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static String outputFolder = "out/";
     public static String testFolder = "test/";
-    public static String inputFile = testFolder + "image_path.thtml";
-
+//    public static String inputFile = testFolder + "image_path.thtml";
+    public static String inputFile;
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
         List<String> literals = Arrays.asList("Title:", "Author:", "Section:", "NewPage:", "BulletPoint:", "Paragraph:",
                 "Image:", "Url:", "Path:", "@(", ")@", "Formula:", "$", "Color:", "Size:", "Bi:");
+        //interactive command-line
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please put your input file (text file) under 'inputFile/' folder.");
+        System.out.println("Please put your input IMAGE under 'inputFile/' folder.");
+        System.out.println("Please enter a complete relative path begin with 'inputFile/'(e.g.  inputFile/sampleInput-1.thtml  ).");
+        String  inputFile = scanner.nextLine();
         String inputFilename = inputFile.substring(inputFile.lastIndexOf("/") + 1, inputFile.lastIndexOf("."));
+        inputFilename = inputFilename.trim();
+        inputFile =  inputFile.trim();
         String latexPath = outputFolder + inputFilename + ".tex";
-
         Tokenizer.makeTokenizer(inputFile, literals);
         try{
             Node.setWriter(latexPath);
@@ -44,6 +52,7 @@ public class Main {
         //take the beamer input, and convert it to slides output
         //any failure encounter here will throw errors
         generatePdf(outputFolder);
+        System.out.println("Please check your output result under 'out/' folder.");
     }
 
     private static void generatePdf(String givenPath){
@@ -137,8 +146,8 @@ public class Main {
                 System.out.println("The program is forced to quit.");
                 // e.printStackTrace();
             }
-            Runtime.getRuntime().exit(0);
         }
+        Runtime.getRuntime().exit(0);
     }
 
     // remove all the log files if the pdf is created successfully.
