@@ -25,6 +25,10 @@ public class Main {
         System.out.println("Please put your input IMAGE under 'inputFile/' folder.");
         System.out.println("Please enter a complete relative path begin with 'inputFile/'(e.g.  inputFile/sampleInput-1.thtml  ).");
         String  inputFile = scanner.nextLine();
+        while (inputFile.lastIndexOf("/") + 1 > inputFile.lastIndexOf(".")){
+            System.out.println("!!!ERROR: " + "not a valid filename, it should contain a filename extension.");
+            inputFile = scanner.nextLine();
+        }
         String inputFilename = inputFile.substring(inputFile.lastIndexOf("/") + 1, inputFile.lastIndexOf("."));
         inputFilename = inputFilename.trim();
         inputFile =  inputFile.trim();
