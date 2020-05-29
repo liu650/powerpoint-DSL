@@ -27,41 +27,38 @@ public class Tokenizer {
         tokenize();
     }
 
+
      private void tokenize (){
 
         System.out.println(rawInput);
         String newInput = rawInput;
 
-        //2. Replace all constant literals with “RESERVEDWORD”<the literal>“RESERVEDWORD”
+        // Replace all constant literals with  reserved + s + reserved;
         for(String s : literals) {
             newInput = newInput.replace(s, reserved + s + reserved);
             System.out.println(newInput);
         }
 
-        //3. Replace all “RESERVEDWORDRESERVEDWORD” with just “RESERVEDWORD”
+        // Remove multiple reserved
         newInput = newInput.replace("```",reserved);
-        newInput = newInput.replace("``",reserved);
+        newInput = newInput.replace("``", reserved);
         System.out.println(newInput);
 
-        //4. Remove leading “_” character, then split on “_”
-        if(newInput.length() > 0 && newInput.charAt(0) == reserved.charAt(0)) {
-            newInput = newInput.substring(1); // without first character
+        // Remove leading RESERVEDWORD
+        if(newInput.charAt(0) == reserved.charAt(0) && !newInput.isEmpty()) {
+            newInput = newInput.substring(1);
         }
+
+        // Split the rest
         String[] tempArray = newInput.split(reserved);
         System.out.println(Arrays.asList(tempArray));
 
-        //5. Trim whitespace
-        for (int i = 0; i < tempArray.length; i++) {
-            tempArray[i] = tempArray[i].trim();
-        }
 
-        //6. Remove empty tokens
-        // tokens = Arrays.stream(tokens).filter(s -> !s.isEmpty()).toArray(String[]::new);
+        // Trim whitespace and remove empty tokens
         for (String s:tempArray){
-            System.out.println("hell");
             System.out.println(s);
-            if(!s.isEmpty()){
-               tokens.add(s);
+            if(!s.trim().isEmpty()){
+               tokens.add(s.trim());
             }
         }
 
@@ -94,20 +91,20 @@ public class Tokenizer {
 
 
     private String checkNext(){
-        String token="NO_MORE_TOKENS";
+        String result="NO_MORE_TOKENS";
         if (moreTokens()){
-            token = tokens.get(index);
+            result = tokens.get(index);
         }
-        return token;
+        return result;
     }
 
     public String getNext(){
-        String token = "NULLTOKEN";
+        String result = "NULLTOKEN";
         if (moreTokens()){
-            token = tokens.get(index);
+            result = tokens.get(index);
             index++;
         }
-        return token;
+        return result;
     }
 
 
@@ -121,7 +118,7 @@ public class Tokenizer {
     public String getAndCheckNext(String regexp){
         String s = getNext();
         if (!s.matches(regexp)) {
-            throw new Error("Unexpected next token for Parsing! Expected something matching: " + regexp + " but got: " + s);
+            throw new Error("Syntax Error: Expected something matching: " + regexp + " but got: " + s);
         }
         System.out.println("matched: "+s+"  to  "+regexp);
         return s;
