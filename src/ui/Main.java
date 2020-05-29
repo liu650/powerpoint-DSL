@@ -15,8 +15,8 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
         List<String> literals = Arrays.asList("Title:","Author:","Section:","NewPage:","BulletPoint:","Paragraph:","Image:","Url:","Path:"
                 ,"@(", ")@", "Formula:","$", "Color:", "Size:", "Bi:");
-        Tokenizer.makeTokenizer("wrongInput.thtml",literals);
-        Node.setWriter("output.html");
+        Tokenizer.makeTokenizer("input.slide",literals);
+        Node.setWriter("out/test_input/output.tex");
         PROGRAM p = new PROGRAM();
         System.out.println("Done tokenizing");
         p.parse();

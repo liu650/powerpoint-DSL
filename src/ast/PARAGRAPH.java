@@ -14,7 +14,7 @@ public class PARAGRAPH extends PAGESTUFF {
     @Override
     public void evaluate() {
         paragraph.evaluate();
-        String end  = "\\newline";
+        String end  = "\\leavevmode"+"\\newline";
         writer.println(end);
     }
 }
