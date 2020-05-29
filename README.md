@@ -14,7 +14,19 @@ Make some neat presentation slides without dealing with annoying details (parame
 5. Table of contents based on sections (navigation on click)
 6. Mathematical formulas (elementary operations)  // stretch goal
 
-## Install
+## Mac Install
+1. Install [Homebrew](https://docs.brew.sh/Installation).
+2. Install [LaTex](https://tug.org/mactex/morepackages.html).
+   By typing the following command in your Terminal
+   
+   <code>brew cask install basictex</code>
+   
+   Note: `BasicTex`(80 MB) is highly recommended than `MacTex`(4 GB+) as it required less space.
+   
+
+## Windows Install
+1. Install [LaTex](https://www.latex-project.org/get/). 
+2. TBD
 
 ## Usage
 ### Grammar
@@ -42,7 +54,7 @@ FORMULA::= "Formula: " STRING  //STRETCH GOAL
 ### Note
 1. When we say "STRING" here, we mean any string without whitespaces and that is not a keyword.
 2. Available colors: 19 basic colors of xcolor package.
-![](basecolors.png)
+![](test/basecolors.png)
 3. Available font sizes: small, normal, big, large, huge
 4. Available font styles: bold, italic
 5. Animations are not supported
