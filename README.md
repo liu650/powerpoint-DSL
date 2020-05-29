@@ -5,7 +5,7 @@
 ### Target User
 People who don't want to waste their time adjusting details in PowerPoint/ debugging Latex code.   
 ### Effect
-Make some neat presentation slides without dealing with annoying details (parameters, debudding)
+Make some neat presentation slides without dealing with annoying details (parameters, debugging)
 ## Features
 1. Plain text input 
 2. Plain/ Bold/ Italic
